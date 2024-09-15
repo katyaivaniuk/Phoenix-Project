@@ -1,0 +1,110 @@
+/* At the top of your CSS file */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+body {
+    margin: 0;
+    font-family: 'Montserrat'; /* Set Montserrat as the default font */
+    background-color: #000;
+    color: #fff;
+}
+
+header {
+    background-color: #000;
+}
+
+.top-bar {
+    display: flex;
+    justify-content:right;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.site-title {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.menu-bar {
+    border-top: 1px solid white;
+    padding: 10px 20px;
+    margin-bottom: 40px; /* Adds space below the menu bar */
+
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 100px;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: semi-bold;
+    font-size: 32px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+    padding: 20px;
+}
+
+.left-image img {
+    width: 80%;
+    height: 130%;
+    object-fit: cover;
+
+}
+
+.right-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+    text-align: center;
+}
+
+
+.flag-image {
+    width: 700px; /* Adjust width as needed */
+    height: auto;
+    margin: 0 auto 30px;
+    object-fit: cover;
+    clip-path: ellipse(45% 120% at 50% 80%); /* Adjust for a taller, upright arch */}
+
+
+.cta-button {
+    padding: 10px 20px;
+    background-color: #04287a;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 15px;
+    font-size: 16px;
+}
+
+
+
+.large-heading {
+    font-size: 48px; /* Adjust the size as needed */
+    font-weight: bold; /* Optional: increase font weight */
+    margin: 20px 0; /* Optional: adjust margin if needed */
+}
+
