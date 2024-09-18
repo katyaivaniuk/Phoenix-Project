@@ -1,8 +1,8 @@
 // frontend/src/App.js
-import './css/styles.css';  // Adjust the path based on where you placed the CSS file
+import './components/Home/Home.css';  // Adjust the path based on where you placed the CSS file
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import Home from './components/Home'; // Component that will replicate the main content
+import Home from './components/Home/Home'; // Component that will replicate the main content
 
 function App() {
   return (

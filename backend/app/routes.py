@@ -5,7 +5,11 @@ from app import app
 def get_data():
     data = {
         "title": "Rebuild Ukraine with Us",
-        "description": "Make a Difference Today",
-        "links": ["Home", "News", "Projects", "About"]
+        "description": "Make a Difference today",
+        "links": ["Explore More"]
     }
     return jsonify(data)
+
+
+
+
