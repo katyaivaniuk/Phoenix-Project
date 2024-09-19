@@ -57,7 +57,7 @@ header {
 }
 
 .site-title {
-    font-size: 44px;
+    font-size: 40px;
     font-weight: bold;
     padding: -10px 0px;
     margin-right: 120px;
@@ -83,7 +83,7 @@ header {
     color: #fff;
     text-decoration: none;
     font-weight: semi-bold;
-    font-size: 28px;
+    font-size: 20px;
 }
 
 main {
@@ -96,13 +96,20 @@ main {
     padding: 20px;
 }
 
-.left-image img {
-    width: 80%;
-    height: 100%;
-    object-fit: cover;
-    padding: 20px;
-
+.left-image {
+    padding: 0; 
+    margin: 0; 
 }
+
+.left-image img {
+    width: 80%;  
+    height: 100%; 
+    object-fit: cover; 
+    padding: 0; 
+    margin: 0;  
+    display: block; 
+}
+
 
 .right-content {
     display: flex;
@@ -144,7 +151,7 @@ main {
 }
 
 p {
-    font-size: 20px; /* Adjust the size as needed */
+    font-size: 12px; /* Adjust the size as needed */
   }
 
 .main-content {
@@ -171,8 +178,8 @@ footer {
 }
 
 .footer-logo {
-    width: 200px; /* Adjust size as needed */
-    height: 200px;
+    width: 150px; /* Adjust size as needed */
+    height: 150px;
     align-items: center;
     margin-bottom: 50px;
 }

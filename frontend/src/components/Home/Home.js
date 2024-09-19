@@ -1,6 +1,7 @@
 // frontend/src/components/Home.js
 import React, { useEffect, useState } from 'react';
 import { fetchData } from '../../services/apiService';
+import './Home.css';  // Ensure your CSS file path is correct
 
 
 function Home() {
