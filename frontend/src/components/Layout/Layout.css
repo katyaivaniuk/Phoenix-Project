@@ -1,0 +1,200 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+html, body {
+    min-height: 100vh;  /* Sets the minimum height to be 100% of the viewport height */
+    height: 100%;  /* This can still be set to 100% to ensure it covers at least the viewport height */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; 
+}
+
+.site-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Use viewport height to ensure footer can sit at the bottom */
+}
+
+.content {
+    flex: 1;  /* Ensures that the content area expands to fill available space, pushing the footer down */
+    padding: 40px;
+    overflow: auto;  /* Adds scroll to the main content if it overflows */
+}
+
+
+
+body {
+    margin: 0;
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat'; 
+    background-color: #000;
+    color: #fff;
+}
+
+header {
+    background-color: #000;
+}
+
+.top-bar {
+    display: flex;
+    justify-content:right;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    margin-right: 5px;
+
+}
+
+.site-title {
+    font-size: 44px;
+    font-weight: bold;
+    padding: -10px 0px;
+    margin-right: 120px;
+
+}
+
+.menu-bar {
+    border-top: 1px solid white;
+    padding: 10px 20px;
+    margin-bottom: 40px; /* Adds space below the menu bar */
+
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 100px;
+    padding: 10;
+    margin: 0;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: semi-bold;
+    font-size: 28px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+    padding: 20px;
+}
+
+.left-image img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    padding: 20px;
+
+}
+
+.right-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+    text-align: center;
+}
+
+.flag-image {
+    width: 500px; 
+    height: auto;
+    margin: 0 auto 30px;
+    object-fit: cover;
+    /* clip-path: path('M 50,500 Q 350,-1350 800,500 Z');  */
+}
+
+
+.cta-button {
+    padding: 10px 20px; 
+    background-color: #04287a; 
+    color: white; 
+    cursor: pointer;
+    margin: 10px auto 0; 
+    border-radius: 30px; 
+    font-size: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+    text-align: center;
+    width: fit-content; 
+    height: 50px;
+    transition: background-color 0.3s, border 0.3s; 
+}
+    
+
+.large-heading {
+    font-size: 40px; 
+    font-weight: bold; 
+    margin: 30px 0; 
+}
+
+p {
+    font-size: 20px; /* Adjust the size as needed */
+  }
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-container {
+    width: 100%;
+    height: 220px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    width: 200px; /* Adjust size as needed */
+    height: 200px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.footer-left, .footer-center, .footer-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-center h2 {
+    margin: 0;
+}
+
+.footer-right p {
+    margin-right: 300px;
+    text-align: right;
+}
+
+.footer-left p{
+    margin-left: 300px;
+
+}
