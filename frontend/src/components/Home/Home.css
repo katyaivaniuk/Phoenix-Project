@@ -21,6 +21,12 @@ html, body {
     overflow: auto;  /* Adds scroll to the main content if it overflows */
 }
 
+.content {
+    flex-direction: column;  /* Stack the content vertically */
+    display: flex;  /* Ensure it's a flex container */
+    padding: 20px;
+    align-items: center;  /* Optional: center content */
+}
 
 
 body {
@@ -37,77 +43,134 @@ header {
     background-color: #000;
 }
 
-.top-bar {
+/* Introduction Section */
+.intro-section {
     display: flex;
-    justify-content:right;
+    flex-direction: row;  /* Keep war image and flag content side-by-side */
     align-items: center;
-    padding: 10px 20px;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    width: 100px;
-    height: 100px;
-    margin-right: 5px;
-
-}
-
-.site-title {
-    font-size: 32px;
-    font-weight: bold;
-    padding: -10px 0px;
-    margin-right: 50px;
-
-}
-
-.menu-bar {
-    border-top: 1px solid white;
-    padding: 10px 20px;
-    margin-bottom: 40px; /* Adds space below the menu bar */
-
-}
-
-.menu {
-    list-style: none;
-    display: flex;
-    gap: 100px;
-    padding: 10;
-    margin: 0;
-}
-
-.menu li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: semi-bold;
-    font-size: 20px;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-}
-
-.content {
-    display: flex;
-    padding: 20px;
-}
-
-.left-image {
-    padding: 0; 
-    margin: 0; 
-}
-
-.left-image img {
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+  
+  .intro-image img {
     width: 80%;  
     height: 100%; 
     object-fit: cover; 
     padding: 0; 
     margin: 0;  
     display: block; 
+  }
+
+
+  .intro-image {
+    padding: 0; 
+    margin: 0; 
+}
+
+
+
+  
+  .intro-content {
+    text-align: center;
+  }
+  
+  .flag-image {
+    width: 400px; 
+    height: auto;
+    margin: 0 auto 30px;
+    object-fit: cover;
+    /* clip-path: path('M 50,500 Q 350,-1350 800,500 Z');  */
+}
+  
+  .large-heading {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .intro-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #ccc;
+  }
+  
+  .cta-button {
+    padding: 10px 20px; 
+    background-color: #04287a; 
+    color: white; 
+    cursor: pointer;
+    margin: 10px auto 0; 
+    border-radius: 30px; 
+    font-size: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+    text-align: center;
+    width: fit-content; 
+    height: 50px;
+    transition: background-color 0.3s, border 0.3s; 
+}
+  
+  .cta-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Goals section */
+  .goals-section {
+    width: 100%;
+    padding: 50px 20px;
+    background-color: #1a1a1a;
+    color: white;
+  }
+  
+  .goals-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .goals-section p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+  }
+  
+  .goals-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .goal {
+    max-width: 300px;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .goal-image {
+    width: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .goal h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .goal p {
+    font-size: 1rem;
+    color: #ccc;
+  }
+
+
+
+
+
+
+
+
+
+.content {
+    display: flex;
+    padding: 20px;
 }
 
 
@@ -128,80 +191,6 @@ main {
 }
 
 
-.cta-button {
-    padding: 10px 20px; 
-    background-color: #04287a; 
-    color: white; 
-    cursor: pointer;
-    margin: 10px auto 0; 
-    border-radius: 30px; 
-    font-size: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.5); 
-    text-align: center;
-    width: fit-content; 
-    height: 50px;
-    transition: background-color 0.3s, border 0.3s; 
-}
+
     
 
-.large-heading {
-    font-size: 32px; 
-    font-weight: bold; 
-    margin: 30px 0; 
-}
-
-p {
-    font-size: 12px; /* Adjust the size as needed */
-  }
-
-.main-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-footer {
-    background-color: black;
-    color: white;
-    padding: 20px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-container {
-    width: 100%;
-    height: 220px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-logo {
-    width: 150px; /* Adjust size as needed */
-    height: 150px;
-    align-items: center;
-    margin-bottom: 50px;
-}
-
-.footer-left, .footer-center, .footer-right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer-center h2 {
-    margin: 0;
-}
-
-.footer-right p {
-    margin-right: 300px;
-    text-align: right;
-}
-
-.footer-left p{
-    margin-left: 300px;
-
-}
