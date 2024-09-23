@@ -39,18 +39,18 @@ function Home() {
         <p>Every Contribution Counts</p>
         <div className="goals-container">
           <div className="goal">
-            <img src="/images/goal1.png" alt="Raise Awareness" className="goal-image" /> {/* Correct path to image */}
-            <h3>Raise Awareness</h3>
+            <img src="/images/Peace.png" alt="Raise Awareness" className="goal-image" /> {/* Correct path to image */}
+            <h4>Raise Awareness</h4>
             <p>Join us in our mission to rebuild Ukraine. Your time and donation will help us rebuild bridges that have been destroyed. Your contribution will make a significant impact on the future of our children.</p>
           </div>
           <div className="goal">
-            <img src="/images/goal2.png" alt="Optimize Resource Allocation" className="goal-image" /> {/* Correct path to image */}
-            <h3>Optimize Resource Allocation</h3>
+            <img src="/images/Peace.png" alt="Optimize Resource Allocation" className="goal-image" /> {/* Correct path to image */}
+            <h4>Optimize Resource Allocation</h4>
             <p>Distribute limited resources to ensure maximum impact on recovery efforts. This goal focuses on using advanced decision-support tools like AHP to prioritize projects essential for rapid recovery of infrastructure such as roads, bridges, and healthcare facilities.</p>
           </div>
           <div className="goal">
-            <img src="/images/goal3.png" alt="Strengthen Community Engagement" className="goal-image" /> {/* Correct path to image */}
-            <h3>Strengthen Community Engagement</h3>
+            <img src="/images/Peace.png" alt="Strengthen Community Engagement" className="goal-image" /> {/* Correct path to image */}
+            <h4>Strengthen Community Engagement</h4>
             <p>Your time and the spread of information will make a significant impact on our reconstruction efforts. It is crucial to make the world know and remember the damages made to Ukraine by Russia.</p>
           </div>
         </div>

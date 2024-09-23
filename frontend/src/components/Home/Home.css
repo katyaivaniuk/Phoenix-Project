@@ -19,9 +19,6 @@ html, body {
     flex: 1;  /* Ensures that the content area expands to fill available space, pushing the footer down */
     padding: 40px;
     overflow: auto;  /* Adds scroll to the main content if it overflows */
-}
-
-.content {
     flex-direction: column;  /* Stack the content vertically */
     display: flex;  /* Ensure it's a flex container */
     padding: 20px;
@@ -39,9 +36,6 @@ body {
     color: #fff;
 }
 
-header {
-    background-color: #000;
-}
 
 /* Introduction Section */
 .intro-section {
@@ -53,7 +47,7 @@ header {
   }
   
   .intro-image img {
-    width: 80%;  
+    width: 90%;  
     height: 100%; 
     object-fit: cover; 
     padding: 0; 
@@ -70,11 +64,11 @@ header {
 
 
   
-  .intro-content {
+.intro-content {
     text-align: center;
-  }
+}
   
-  .flag-image {
+.flag-image {
     width: 400px; 
     height: auto;
     margin: 0 auto 30px;
@@ -83,13 +77,13 @@ header {
 }
   
   .large-heading {
-    font-size: 2.5rem;
+    font-size: 25px;
     margin-bottom: 20px;
     color: #fff;
   }
   
   .intro-content p {
-    font-size: 1.2rem;
+    font-size: 16px;
     margin-bottom: 20px;
     color: #ccc;
   }
@@ -105,7 +99,7 @@ header {
     border: 1px solid rgba(255, 255, 255, 0.5); 
     text-align: center;
     width: fit-content; 
-    height: 50px;
+    height: 40px;
     transition: background-color 0.3s, border 0.3s; 
 }
   
@@ -147,16 +141,16 @@ header {
   
   .goal-image {
     width: 100px;
-    margin-bottom: 20px;
-  }
-  
-  .goal h3 {
-    font-size: 1.5rem;
     margin-bottom: 10px;
   }
   
+  .goal h4 {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
   .goal p {
-    font-size: 1rem;
+    font-size: 14px;
     color: #ccc;
   }
 
