@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { fetchData } from '../../services/apiService';
 import './Home.css';  // Ensure your CSS file path is correct
+import '../News/News.css'; 
+
 
 function Home() {
   const [data, setData] = useState({ title: '', description: '', links: [] });
