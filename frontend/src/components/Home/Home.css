@@ -155,13 +155,7 @@ body {
   }
 
 
-
-
-
-
-
-
-
+/* 
 .content {
     display: flex;
     padding: 20px;
@@ -182,7 +176,7 @@ body {
     margin: 0 auto 30px;
     object-fit: cover;
     /* clip-path: path('M 50,500 Q 350,-1350 800,500 Z');  */
-}
+
 
 
 
