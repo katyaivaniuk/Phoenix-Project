@@ -91,81 +91,17 @@ main {
     flex-direction: column;
 }
 
-.content {
-    display: flex;
-    padding: 20px;
-}
-
-.left-image {
-    padding: 0; 
-    margin: 0; 
-}
-
-.left-image img {
-    width: 80%;  
-    height: 100%; 
-    object-fit: cover; 
-    padding: 0; 
-    margin: 0;  
-    display: block; 
-}
-
-
-.right-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 80px;
-    text-align: center;
-}
-
-.flag-image {
-    width: 500px; 
-    height: auto;
-    margin: 0 auto 30px;
-    object-fit: cover;
-    /* clip-path: path('M 50,500 Q 350,-1350 800,500 Z');  */
-}
-
-
-.cta-button {
-    padding: 10px 20px; 
-    background-color: #04287a; 
-    color: white; 
-    cursor: pointer;
-    margin: 10px auto 0; 
-    border-radius: 30px; 
-    font-size: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.5); 
-    text-align: center;
-    width: fit-content; 
-    height: 50px;
-    transition: background-color 0.3s, border 0.3s; 
-}
-    
-
-.large-heading {
-    font-size: 40px; 
-    font-weight: bold; 
-    margin: 30px 0; 
-}
-
-p {
-    font-size: 12px; /* Adjust the size as needed */
-  }
-
 .main-content {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
-
 footer {
     background-color: black;
     color: white;
-    padding: 20px 50px;
+    padding: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centers the footer container within the footer */
     align-items: center;
 }
 
@@ -173,35 +109,43 @@ footer {
     width: 100%;
     height: 220px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Adjust if necessary, maybe 'center' if you want everything centered */
     align-items: center;
 }
 
 .footer-logo {
-    width: 150px; /* Adjust size as needed */
-    height: 150px;
-    align-items: center;
-    margin-bottom: 50px;
+    width: 160px; /* Adjust size as needed */
+    height: 170px;
 }
 
 .footer-left, .footer-center, .footer-right {
-    flex: 1;
+    flex: 1; /* Adjust this value to control the space each section takes */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.footer-left {
+    margin-left: 40px;
+    margin-top:30px;
+}
+
+.footer-right {
+    margin-right: 20px;
+    margin-top:30px;
+}
+
+.footer-center {
+    align-items: center; /* Ensure center alignment for the logo and name */
+}
+
 .footer-center h2 {
-    margin: 0;
+    margin: 0; /* Ensure there are no margins affecting centering */
 }
 
-.footer-right p {
-    margin-right: 300px;
-    text-align: right;
-}
-
-.footer-left p{
-    margin-left: 300px;
-
+/* Remove large margins that could skew the alignment */
+.footer-right p, .footer-left p {
+    margin: 0; /* Reset margin to ensure even spacing and alignment */
+    text-align: center; /* Center align the text */
 }

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import './Layout.css';  // Ensure your CSS file path is correct
 
-function Layout({ children }) {
+function Layout() {
     return (
         <div className="site-container">
             <header>
@@ -21,7 +21,9 @@ function Layout({ children }) {
                     </ul>
                 </nav>
             </header>
-            <main className="content">{children}</main>
+            <main className="content">
+                <Outlet />  
+            </main>
             <footer>
                 <div className="footer-container">
                     <div className="footer-left">
@@ -32,7 +34,7 @@ function Layout({ children }) {
                         <img src="/images/Logo.png" alt="Phoenix Ukraine Logo" className="footer-logo" />
                     </div>
                     <div className="footer-right">
-                        <p>Phone: 123-456-7890</p>
+                        <p>Phone: 123456789000</p>
                     </div>
                 </div>
             </footer>
@@ -41,3 +43,4 @@ function Layout({ children }) {
 }
 
 export default Layout;
+
