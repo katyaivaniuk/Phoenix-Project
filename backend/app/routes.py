@@ -9,4 +9,3 @@ def get_data():
         "links": ["Explore More"]
     }
     return jsonify(data)
-

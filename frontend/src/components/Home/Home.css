@@ -153,32 +153,3 @@ body {
     font-size: 14px;
     color: #ccc;
   }
-
-
-/* 
-.content {
-    display: flex;
-    padding: 20px;
-}
-
-
-.right-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-right: 20px;
-    text-align: center;
-}
-
-.flag-image {
-    width: 400px; 
-    height: auto;
-    margin: 0 auto 30px;
-    object-fit: cover;
-    /* clip-path: path('M 50,500 Q 350,-1350 800,500 Z');  */
-
-
-
-
-    
-
