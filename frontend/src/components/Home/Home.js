@@ -52,10 +52,19 @@ function Home() {
           {news.length > 0 ? (
             news.map((article, index) => (
               <div key={index} className="news-item">
-                <img src="/images/News.jpeg" alt={`News ${index + 1}`} className="news-image" />
+                <img 
+                  src={article.image || '/images/News.jpeg'}  
+                  alt={`News ${index + 1}`} 
+                  className="news-image" 
+                />               
                 <div className="news-content">
                   <h4>{article.title}</h4>
                   <p>{article.summary}</p>
+                  <p><strong>Published on:</strong> {new Date(article.publishedAt).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric', 
+                  })}</p>                 
                   <a href={article.link} target="_blank" rel="noopener noreferrer">Read more</a>
                 </div>
               </div>
