@@ -1,12 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';  // Import useState and useEffect
+import { fetchNews } from '../../services/apiService';  // Assuming fetchNews is in this path
 
 function News() {
-    return (
-        <div>
-            <h1>News Page</h1>
-            <p>Latest news will be shown here.</p>
-        </div>
-    );
+  const [news, setNews] = useState([]);  // State to store the latest news articles
+
+  useEffect(() => {
+    const loadNews = async () => {
+      try {
+        const fetchedNews = await fetchNews();  // Fetch dynamic news data
+        setNews(fetchedNews);  // Set the fetched news into state
+      } catch (error) {
+        console.error('Error fetching news:', error);
+      }
+    };
+
+    loadNews();  // Fetch news data when the component mounts
+  }, []);  // Empty dependency array ensures it runs only once on mount
+
+  return (
+    <div className="news-section">
+      <h2>Latest News</h2>
+      <div className="news-container">
+        {news.length > 0 ? (
+          news.map((article, index) => (
+            <div key={index} className="news-item">
+              <img 
+                src={article.image || '/images/News.jpeg'}  
+                alt={`News ${index + 1}`} 
+                className="news-image" 
+              />
+              <div className="news-content">
+                <h4>{article.title}</h4>
+                <p>{article.summary}</p>
+                <p><strong>Published on:</strong> {new Date(article.publishedAt).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}</p>
+                <a href={article.link} target="_blank" rel="noopener noreferrer">Read more</a>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p>No news available at the moment.</p>
+        )}
+      </div>
+    </div>
+  );
 }
 
 export default News;
