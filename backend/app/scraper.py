@@ -58,15 +58,17 @@ def filter_and_diversify_articles(articles):
 
         # Apply weighted filtering logic
         weight = calculate_weight(sentiment, topic)
+        
+        # Convert all data to JSON-compatible types
         article_data = {
-            'title': title,
-            'link': url,
-            'summary': description or "No description available.",
-            'publishedAt': article['publishedAt'],
-            'image': article.get('urlToImage', '/images/default-news.jpeg'),
-            'weight': weight,
-            'sentiment': sentiment,
-            'topic': topic
+            'title': str(title),
+            'link': str(url),
+            'summary': str(description or "No description available."),
+            'publishedAt': str(article['publishedAt']),
+            'image': str(article.get('urlToImage', '/images/default-news.jpeg')),
+            'weight': float(weight),          # Convert weight to float
+            'sentiment': float(sentiment),    # Convert sentiment to float
+            'topic': int(topic)               # Convert topic to int
         }
         seen_urls.add(url)
         filtered_articles.append(article_data)
@@ -74,6 +76,7 @@ def filter_and_diversify_articles(articles):
     # Sort by weight to ensure diversity and limit to top articles
     filtered_articles.sort(key=lambda x: x['weight'], reverse=True)
     return filtered_articles[:3]
+
 
 def calculate_weight(sentiment, topic):
     # Calculate weight based on sentiment and topic

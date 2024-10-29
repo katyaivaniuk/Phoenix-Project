@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchNews, fetchFallbackNews } from '../../services/apiService';  // Assuming fetchFallbackNews retrieves the last 3 stored articles
+import { fetchNews, fetchFallbackNews } from '../../services/apiService';
 
 function News() {
   const [news, setNews] = useState([]);  // State to store the latest news articles
@@ -7,14 +7,19 @@ function News() {
   useEffect(() => {
     const loadNews = async () => {
       try {
-        let fetchedNews = await fetchNews();  // Fetch dynamic news data
+        // Attempt to fetch the latest news
+        let fetchedNews = await fetchNews();
+        console.log("Fetched latest news:", fetchedNews);
 
-        // Check if fetchedNews is empty and load fallback if necessary
+        // If no articles are returned, attempt to fetch fallback news
         if (!fetchedNews || fetchedNews.length === 0) {
-          fetchedNews = await fetchFallbackNews();  // Fetch last 3 stored articles
+          console.log("No new articles found. Fetching fallback news.");
+          fetchedNews = await fetchFallbackNews();
+          console.log("Fetched fallback news:", fetchedNews);
         }
 
-        setNews(fetchedNews);  // Set the fetched or fallback news into state
+        // Set the fetched or fallback news into state
+        setNews(fetchedNews);
       } catch (error) {
         console.error('Error fetching news:', error);
       }
@@ -57,3 +62,4 @@ function News() {
 }
 
 export default News;
+
