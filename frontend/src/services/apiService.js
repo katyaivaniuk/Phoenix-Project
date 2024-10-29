@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:5000'; // For development, adjust for production
+const BASE_URL = 'http://127.0.0.1:5000'; // Use this for development
 
 // Fetch general data
 export const fetchData = async () => {
@@ -35,8 +35,6 @@ export const postData = async (data) => {
   }
 };
 
-// More API functions can be added here
-// Example: Fallback to last 3 articles (to be customized based on your setup)
 export const fetchFallbackNews = async () => {
   try {
     const response = await fetch('/api/last-three-articles');  // Replace with your endpoint
