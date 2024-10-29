@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';  // Import useState and useEffect
-import { fetchNews } from '../../services/apiService';  // Assuming fetchNews is in this path
+import React, { useState, useEffect } from 'react';
+import { fetchNews, fetchFallbackNews } from '../../services/apiService';  // Assuming fetchFallbackNews retrieves the last 3 stored articles
 
 function News() {
   const [news, setNews] = useState([]);  // State to store the latest news articles
@@ -7,8 +7,14 @@ function News() {
   useEffect(() => {
     const loadNews = async () => {
       try {
-        const fetchedNews = await fetchNews();  // Fetch dynamic news data
-        setNews(fetchedNews);  // Set the fetched news into state
+        let fetchedNews = await fetchNews();  // Fetch dynamic news data
+
+        // Check if fetchedNews is empty and load fallback if necessary
+        if (!fetchedNews || fetchedNews.length === 0) {
+          fetchedNews = await fetchFallbackNews();  // Fetch last 3 stored articles
+        }
+
+        setNews(fetchedNews);  // Set the fetched or fallback news into state
       } catch (error) {
         console.error('Error fetching news:', error);
       }
@@ -32,6 +38,7 @@ function News() {
               <div className="news-content">
                 <h4>{article.title}</h4>
                 <p>{article.summary}</p>
+                <p><strong>Sentiment:</strong> {article.sentiment > 0 ? 'Positive' : article.sentiment < 0 ? 'Negative' : 'Neutral'}</p>
                 <p><strong>Published on:</strong> {new Date(article.publishedAt).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',
