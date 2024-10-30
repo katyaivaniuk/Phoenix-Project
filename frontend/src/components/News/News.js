@@ -1,33 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { fetchNews, fetchFallbackNews } from '../../services/apiService';
+// News.js
+import React from 'react';
 
-function News() {
-  const [news, setNews] = useState([]);  // State to store the latest news articles
-
-  useEffect(() => {
-    const loadNews = async () => {
-      try {
-        // Attempt to fetch the latest news
-        let fetchedNews = await fetchNews();
-        console.log("Fetched latest news:", fetchedNews);
-
-        // If no articles are returned, attempt to fetch fallback news
-        if (!fetchedNews || fetchedNews.length === 0) {
-          console.log("No new articles found. Fetching fallback news.");
-          fetchedNews = await fetchFallbackNews();
-          console.log("Fetched fallback news:", fetchedNews);
-        }
-
-        // Set the fetched or fallback news into state
-        setNews(fetchedNews);
-      } catch (error) {
-        console.error('Error fetching news:', error);
-      }
-    };
-
-    loadNews();  // Fetch news data when the component mounts
-  }, []);  // Empty dependency array ensures it runs only once on mount
-
+function News({ news }) {
   return (
     <div className="news-section">
       <h2>Latest News</h2>
@@ -43,7 +17,6 @@ function News() {
               <div className="news-content">
                 <h4>{article.title}</h4>
                 <p>{article.summary}</p>
-                <p><strong>Sentiment:</strong> {article.sentiment > 0 ? 'Positive' : article.sentiment < 0 ? 'Negative' : 'Neutral'}</p>
                 <p><strong>Published on:</strong> {new Date(article.publishedAt).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',
@@ -62,4 +35,3 @@ function News() {
 }
 
 export default News;
-

@@ -1,11 +1,11 @@
+// Home.js
 import React, { useEffect, useState } from 'react';
-import { fetchData, fetchNews } from '../../services/apiService';  // Add fetchNews to handle news fetching
+import { fetchData } from '../../services/apiService';
 import './Home.css';
 import '../News/News.css';
 
-function Home() {
+function Home({ news }) {
   const [data, setData] = useState({ title: '', description: '', links: [] });
-  const [news, setNews] = useState([]);  // State to store the latest news articles
 
   useEffect(() => {
     const loadData = async () => {
@@ -17,17 +17,7 @@ function Home() {
       }
     };
 
-    const loadNews = async () => {
-      try {
-        const fetchedNews = await fetchNews();  // Fetch dynamic news data
-        setNews(fetchedNews);  // Set the fetched news into state
-      } catch (error) {
-        console.error('Error fetching news:', error);
-      }
-    };
-
     loadData();  // Fetch static data when the component mounts
-    loadNews();  // Fetch news data when the component mounts
   }, []);
 
   return (
@@ -50,26 +40,25 @@ function Home() {
         <h2>Latest News</h2>
         <div className="news-container">
           {news.length > 0 ? (
-          news.map((article, index) => (
-            <div key={index} className="news-item">
-              <img 
-                src={article.image || '/images/News.jpeg'}  
-                alt={`News ${index + 1}`} 
-                className="news-image" 
-              />
-              <div className="news-content">
-                <h4>{article.title}</h4>
-                <p>{article.summary}</p>
-                <p><strong>Published on:</strong> {new Date(article.publishedAt).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}</p>
-                <a href={article.link} target="_blank" rel="noopener noreferrer">Read more</a>
+            news.map((article, index) => (
+              <div key={index} className="news-item">
+                <img 
+                  src={article.image || '/images/News.jpeg'}  
+                  alt={`News ${index + 1}`} 
+                  className="news-image" 
+                />
+                <div className="news-content">
+                  <h4>{article.title}</h4>
+                  <p>{article.summary}</p>
+                  <p><strong>Published on:</strong> {new Date(article.publishedAt).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}</p>
+                  <a href={article.link} target="_blank" rel="noopener noreferrer">Read more</a>
+                </div>
               </div>
-            </div>
-          ))
-
+            ))
           ) : (
             <p>No news available at the moment.</p>
           )}
@@ -103,4 +92,3 @@ function Home() {
 }
 
 export default Home;
-
