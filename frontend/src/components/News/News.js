@@ -1,32 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { fetchNews, fetchFallbackNews } from '../../services/apiService';
 
-function News() {
-  const [news, setNews] = useState([]);  // State to store the latest news articles
+// Custom hook to fetch news data
+const useFetchNews = () => {
+  const [news, setNews] = useState([]);
 
   useEffect(() => {
     const loadNews = async () => {
       try {
-        // Attempt to fetch the latest news
         let fetchedNews = await fetchNews();
-        console.log("Fetched latest news:", fetchedNews);
-
-        // If no articles are returned, attempt to fetch fallback news
         if (!fetchedNews || fetchedNews.length === 0) {
-          console.log("No new articles found. Fetching fallback news.");
           fetchedNews = await fetchFallbackNews();
-          console.log("Fetched fallback news:", fetchedNews);
         }
-
-        // Set the fetched or fallback news into state
-        setNews(fetchedNews);
+        setNews(fetchedNews.slice(0, 3)); // Limit to 3 articles
       } catch (error) {
         console.error('Error fetching news:', error);
       }
     };
 
-    loadNews();  // Fetch news data when the component mounts
-  }, []);  // Empty dependency array ensures it runs only once on mount
+    loadNews();
+  }, []);
+
+  return news;
+};
+
+function News() {
+  const news = useFetchNews();
 
   return (
     <div className="news-section">
@@ -61,5 +60,5 @@ function News() {
   );
 }
 
+export { useFetchNews };
 export default News;
-
