@@ -1,12 +1,11 @@
+// Home.js
 import React, { useEffect, useState } from 'react';
 import { fetchData } from '../../services/apiService';
-import { useFetchNews } from '../News/News';
 import './Home.css';
 import '../News/News.css';
 
-function Home() {
+function Home({ news }) {
   const [data, setData] = useState({ title: '', description: '', links: [] });
-  const news = useFetchNews(); // Use custom hook to fetch the latest news
 
   useEffect(() => {
     const loadData = async () => {
