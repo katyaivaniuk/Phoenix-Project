@@ -6,10 +6,15 @@ from textblob import TextBlob  # For sentiment analysis
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.decomposition import LatentDirichletAllocation
 import json
+import spacy
+
 
 # Load API key
 load_dotenv()
+nlp = spacy.load("en_core_web_sm")
+
 NEWS_API_KEY = os.getenv('NEWS_API_KEY')
+ukraine_keywords = ["Ukraine", "Kyiv", "Zelensky", "Russia-Ukraine war", "Ukrainian conflict"]
 
 # Rotating keywords for diversity
 keywords_list = [
@@ -39,6 +44,7 @@ def get_latest_articles():
 
 def filter_and_diversify_articles(articles):
     seen_urls = set()
+    seen_titles = set()
     filtered_articles = []
 
     for article in articles:
@@ -46,9 +52,17 @@ def filter_and_diversify_articles(articles):
         title = article['title']
         description = article['description']
         content = article['content'] or ''
-
-        if url in seen_urls:
+        
+        # Normalize title to lowercase and remove whitespace
+        normalized_title = title.lower().strip()
+        
+        # Skip if URL or title already seen to avoid exact duplicates
+        if url in seen_urls or normalized_title in seen_titles:
             continue
+
+        relevance_score = sum(keyword.lower() in (title + content).lower() for keyword in ukraine_keywords)
+        if relevance_score == 0:
+            continue 
 
         # Sentiment Analysis to add weight based on sentiment
         sentiment = TextBlob(content).sentiment.polarity
@@ -59,7 +73,7 @@ def filter_and_diversify_articles(articles):
         # Apply weighted filtering logic
         weight = calculate_weight(sentiment, topic)
         
-        # Convert all data to JSON-compatible types
+        # Create a dictionary of the article data
         article_data = {
             'title': str(title),
             'link': str(url),
@@ -70,12 +84,15 @@ def filter_and_diversify_articles(articles):
             'sentiment': float(sentiment),    # Convert sentiment to float
             'topic': int(topic)               # Convert topic to int
         }
+        
+        # Add to sets to avoid duplicates in future iterations
         seen_urls.add(url)
+        seen_titles.add(normalized_title)
         filtered_articles.append(article_data)
 
-    # Sort by weight to ensure diversity and limit to top articles
+    # Sort by weight to prioritize the most unique and diverse articles
     filtered_articles.sort(key=lambda x: x['weight'], reverse=True)
-    return filtered_articles[:3]
+    return filtered_articles[:3]  # Return the top three unique articles
 
 
 def calculate_weight(sentiment, topic):
@@ -101,3 +118,4 @@ if __name__ == "__main__":
     latest_articles = get_latest_articles()
     for article in latest_articles:
         print(json.dumps(article, indent=2))
+
