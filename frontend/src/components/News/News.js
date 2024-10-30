@@ -1,32 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { fetchNews, fetchFallbackNews } from '../../services/apiService';
+// News.js
+import React from 'react';
 
-// Custom hook to fetch news data
-const useFetchNews = () => {
-  const [news, setNews] = useState([]);
-
-  useEffect(() => {
-    const loadNews = async () => {
-      try {
-        let fetchedNews = await fetchNews();
-        if (!fetchedNews || fetchedNews.length === 0) {
-          fetchedNews = await fetchFallbackNews();
-        }
-        setNews(fetchedNews.slice(0, 3)); // Limit to 3 articles
-      } catch (error) {
-        console.error('Error fetching news:', error);
-      }
-    };
-
-    loadNews();
-  }, []);
-
-  return news;
-};
-
-function News() {
-  const news = useFetchNews();
-
+function News({ news }) {
   return (
     <div className="news-section">
       <h2>Latest News</h2>
@@ -42,7 +17,6 @@ function News() {
               <div className="news-content">
                 <h4>{article.title}</h4>
                 <p>{article.summary}</p>
-                <p><strong>Sentiment:</strong> {article.sentiment > 0 ? 'Positive' : article.sentiment < 0 ? 'Negative' : 'Neutral'}</p>
                 <p><strong>Published on:</strong> {new Date(article.publishedAt).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',
@@ -60,5 +34,4 @@ function News() {
   );
 }
 
-export { useFetchNews };
 export default News;
