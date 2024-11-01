@@ -1,7 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Projects.css';
 
 function Projects() {
+    const regions = [
+        { id: 'kharkiv', name: 'Kharkiv', image: '/images/kharkiv.jpg' },
+        { id: 'kherson', name: 'Kherson', image: '/images/kherson.jpg' },
+        { id: 'donetsk', name: 'Donetsk', image: '/images/donetsk.jpg' },
+        { id: 'kyiv', name: 'Kyiv', image: '/images/kyiv.jpg' },
+        { id: 'vinnytsia', name: 'Vinnytsia', image: '/images/vinnytsia.jpg' },
+        { id: 'luhansk', name: 'Luhansk', image: '/images/luhansk.jpg' },
+        { id: 'sumy', name: 'Sumy', image: '/images/sumy.webp' },
+        { id: 'kherson-port', name: 'Kherson Port', image: '/images/kherson.webp' },
+      ];
+
+
   return (
     <section className="projects-page-content">
       <div className="projects-page-intro">
@@ -19,8 +32,27 @@ function Projects() {
           <img src="/images/Flag.png" alt="Independence Statue" />
         </div>
       </div>
+
+
+      {/* Reconstruction Projects Section */}
+      <div className="reconstruction-projects-section">
+        <h2 className="section-title">Reconstruction Projects Based on the Region</h2>
+        <div className="regions-grid">
+          {regions.map((region) => (
+            <div key={region.id} className="region-card">
+              <img src={region.image} alt={region.name} className="region-image" />
+              <div className="region-overlay">
+                <h3 className="region-name">{region.name}</h3>
+                <Link to={`/projects/${region.id}`} className="learn-more-button">
+                  Learn More
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
-
+   
 export default Projects;

@@ -34,7 +34,7 @@ function Layout() {
                         <img src="/images/Logo.png" alt="Phoenix Ukraine Logo" className="footer-logo" />
                     </div>
                     <div className="footer-right">
-                        <p>Phone: 123456789000</p>
+                        <p>Phone: 415-579-6088</p>
                     </div>
                 </div>
             </footer>
