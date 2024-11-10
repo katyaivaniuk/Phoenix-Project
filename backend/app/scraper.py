@@ -113,7 +113,6 @@ def get_article_topic(content):
     topic = lda.transform(content_matrix)[0].argmax()  # Extract primary topic index
     return topic
 
-# Example execution
 if __name__ == "__main__":
     latest_articles = get_latest_articles()
     for article in latest_articles:

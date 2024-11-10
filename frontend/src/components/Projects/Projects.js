@@ -11,7 +11,7 @@ function Projects() {
         { id: 'vinnytsia', name: 'Vinnytsia', image: '/images/vinnytsia.jpg' },
         { id: 'luhansk', name: 'Luhansk', image: '/images/luhansk.jpg' },
         { id: 'sumy', name: 'Sumy', image: '/images/sumy.webp' },
-        { id: 'kherson-port', name: 'Kherson Port', image: '/images/kherson.webp' },
+        { id: 'kherson', name: 'Kherson', image: '/images/kherson.webp' },
       ];
 
 
@@ -33,16 +33,16 @@ function Projects() {
         </div>
       </div>
 
-
-      {/* Reconstruction Projects Section */}
-      <div className="reconstruction-projects-section">
+     {/* Reconstruction Projects Section */}
+     <div className="reconstruction-projects-section">
         <h2 className="section-title">Reconstruction Projects Based on the Region</h2>
         <div className="regions-grid">
           {regions.map((region) => (
             <div key={region.id} className="region-card">
-              <img src={region.image} alt={region.name} className="region-image" />
+              <img src={region.image} alt={region.name} 
+              className="region-image"  style={{ filter: 'brightness(50%)' }}/>
+              <h3 className="region-name">{region.name}</h3> {/* Static name in the center */}
               <div className="region-overlay">
-                <h3 className="region-name">{region.name}</h3>
                 <Link to={`/projects/${region.id}`} className="learn-more-button">
                   Learn More
                 </Link>
