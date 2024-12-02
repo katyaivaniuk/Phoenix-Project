@@ -1,12 +1,13 @@
-import requests
 import os
-from dotenv import load_dotenv
-import random
-from textblob import TextBlob  # For sentiment analysis
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.decomposition import LatentDirichletAllocation
 import json
 import spacy
+import random
+import requests
+from dotenv import load_dotenv
+from textblob import TextBlob  
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.decomposition import LatentDirichletAllocation
+
 
 
 # Load API key
