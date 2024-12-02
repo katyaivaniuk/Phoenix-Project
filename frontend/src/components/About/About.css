@@ -1,13 +1,16 @@
 /* About Section */
 .about-section {
-    padding: 40px 20px;
-    text-align: center;
+    padding: 40px 10px;
+    text-align: left;
     background-color: #1a1a1a;
+    width: 1200px;
+
 }
 
 .about-section h2 {
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    margin-top: 5px;
     color: white;
 }
 
@@ -16,7 +19,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Makes it responsive */
+    flex-wrap: wrap; 
     gap: 30px;
 }
 
@@ -44,7 +47,7 @@
 .social-links a img {
     width: 30px;
     height: 30px;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 .social-links {
@@ -72,4 +75,5 @@
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-left: 140px
 }
