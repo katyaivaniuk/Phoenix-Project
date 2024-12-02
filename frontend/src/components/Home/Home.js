@@ -1,11 +1,13 @@
 // Home.js
 import React, { useEffect, useState } from 'react';
 import { fetchData } from '../../services/apiService';
+import { useNavigate } from 'react-router-dom';
 import './Home.css';
 import '../News/News.css';
 
 function Home({ news }) {
   const [data, setData] = useState({ title: '', description: '', links: [] });
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadData = async () => {
@@ -31,7 +33,13 @@ function Home({ news }) {
           <img src="/images/Flag1.jpg" alt="Flag Image" className="flag-image" />
           <h1 className="large-heading">{data.title}</h1>
           <p>{data.description}</p>
-          <button className="cta-button">{data.links}</button>
+          <button 
+            className="cta-button" 
+            onClick={() => navigate("/projects")}
+          >
+            {data.links[0]}
+          </button>
+
         </div>
       </div>
 
