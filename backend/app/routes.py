@@ -1,5 +1,7 @@
 from flask import jsonify
 from app import app
+import json
+
 from app.scraper import get_latest_articles  
 
 @app.route("/api/data")
@@ -27,3 +29,10 @@ def get_news():
         print("-" * 50)
     
     return jsonify(news)
+
+
+@app.route("/api/bridges")
+def get_all_bridges():
+    with open("app/data/bridges.json", "r") as file:
+        data = json.load(file)
+    return jsonify(data)
