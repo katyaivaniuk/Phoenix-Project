@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Projects.css';
+import MapComponent from "../MapComponent/MapComponent";
 
 function Projects() {
     const regions = [
@@ -31,6 +32,11 @@ function Projects() {
         <div className="projects-intro-image">
           <img src="/images/Flag.png" alt="Independence Statue" />
         </div>
+      </div>
+      {/* Map Section */}
+        <div className="interactive-map-section">
+        <h2 className="section-title">Explore Impacted Regions</h2>
+        <MapComponent />
       </div>
 
      {/* Reconstruction Projects Section */}
