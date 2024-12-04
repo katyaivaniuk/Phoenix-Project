@@ -27,7 +27,15 @@ function Projects() {
           <p className="projects-description">
             Use the map below to explore the regions impacted by the full-scale invasion. By clicking on a pin, you can learn about the reconstruction project in that region, its history, level of urgency, and the estimated rebuilding cost.
           </p>
-          <button className="projects-support-button">#SUPPORTUKRAINE 💙💛</button>
+          <a
+          href="https://savelife.in.ua/en/donate-en/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <button className="projects-support-button">
+            #SUPPORTUKRAINE 💙💛
+          </button>
+        </a>
         </div>
         <div className="projects-intro-image">
           <img src="/images/Flag.png" alt="Independence Statue" />

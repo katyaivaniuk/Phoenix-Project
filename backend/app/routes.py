@@ -1,5 +1,7 @@
 from flask import jsonify
 from app import app
+import json
+
 from app.scraper import get_latest_articles  
 
 @app.route("/api/data")
