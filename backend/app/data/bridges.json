@@ -1,0 +1,23 @@
+[
+    {
+      "Bridge ID": "ID004",
+      "Bridge Name": "Bakhmut Rail Bridge",
+      "Region": "Donetsk",
+      "Bridge Function": "Railway",
+      "Reconstruction Costs": 556311.00,
+      "Volume": 3200,
+      "Latitude": 48.5937,
+      "Longitude": 37.9986
+    },
+    {
+      "Bridge ID": "ID021",
+      "Bridge Name": "Bohorodychne Bridge",
+      "Region": "Donetsk",
+      "Bridge Function": "Highway",
+      "Reconstruction Costs": 4176000.00,
+      "Volume": 8700,
+      "Latitude": 49.0762,
+      "Longitude": 37.6389
+    }
+  ]
+  
