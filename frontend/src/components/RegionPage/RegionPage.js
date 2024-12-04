@@ -7,6 +7,15 @@ function RegionPage() {
     const [region, setRegion] = useState(null);
     const [bridges, setBridges] = useState([]);
     const [error, setError] = useState(null);
+    const staticImages = [
+        '/images/static1.jpg',
+        '/images/static2.webp',
+        '/images/static3.jpg',
+        '/images/static4.webp',
+        '/images/static5.webp',
+        '/images/static6.jpg',
+        '/images/static7.jpg',
+    ];
 
     useEffect(() => {
         const fetchRegionData = async () => {
@@ -43,9 +52,13 @@ function RegionPage() {
     return (
         <div className="region-page">
             <section className="region-header">
-            <h1>{region.name.toUpperCase()} Reconstruction Projects</h1>
-            <p>Explore reconstruction efforts and priorities for bridges in this region.</p>
-            </section>
+            <h1>{region.name.charAt(0).toUpperCase() + region.name.slice(1).toLowerCase()} Reconstruction Projects</h1>
+            <div className="region-images">
+                {staticImages.map((image, index) => (
+                    <img key={index} src={image} alt={`Reconstruction`} className="region-image" />
+                ))}
+            </div>
+        </section>
             <section className="region-bridge-section">
                 <h2>Reconstruction of Bridges Based on Priority</h2>
                 <p>
