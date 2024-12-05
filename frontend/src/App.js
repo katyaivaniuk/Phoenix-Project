@@ -7,6 +7,7 @@ import Home from './components/Home/Home';
 import News from './components/News/News';
 import Projects from './components/Projects/Projects';
 import About from './components/About/About';
+import RegionPage from './components/RegionPage/RegionPage';
 
 function App() {
     const [news, setNews] = useState([]);
@@ -35,6 +36,7 @@ function App() {
                     <Route path="news" element={<News news={news} />} /> {/* Pass news as props */}
                     <Route path="projects" element={<Projects />} />
                     <Route path="about" element={<About />} />
+                    <Route path="projects/:regionId" element={<RegionPage />} /> {/* Dynamic region route */}
                 </Route>
             </Routes>
         </Router>
