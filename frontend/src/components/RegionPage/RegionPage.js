@@ -42,7 +42,7 @@ function RegionPage() {
     }, [regionId]);
 
     if (error) {
-        return <p>{error}</p>;
+        return <p>There are no bridges in need of reconstruction.</p>;
     }
 
     if (!region) {
