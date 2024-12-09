@@ -12,7 +12,7 @@
     font-size: 45px;
     font-weight: bold;
     margin-top: 110px;
-    margin-left: 100px;
+    margin-left: 60px;
     text-transform: capitalize;
     max-width: 300px; 
 }
@@ -33,7 +33,7 @@
 }
 
 .region-images img:nth-child(1) {
-    top: -70px;
+    top: -80px;
     left: -175px;
     width:300px;
     height: 200px;
@@ -41,10 +41,10 @@
 }
 
 .region-images img:nth-child(2) {
-    top: -90px;
+    top: -70px;
     right: 350px;
     width: 250px;
-    height: 200px;
+    height: 175px;
 }
 
 .region-images img:nth-child(3) {

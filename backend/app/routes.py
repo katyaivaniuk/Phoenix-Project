@@ -1,7 +1,9 @@
 from flask import jsonify
 from app import app
-import json
+from app.ahp import prioritize_bridges
+from app.ahp import convert_to_serializable
 
+import json
 from app.scraper import get_latest_articles  
 
 @app.route("/api/data")
@@ -40,17 +42,18 @@ def get_all_bridges():
 
 @app.route("/api/regions/<region_id>")
 def get_region_data(region_id):
-    # Load bridge data
-    with open("app/data/bridges.json", "r") as f:
-        data = json.load(f)
-    
-    bridges = [bridge for bridge in data if bridge["Region"].lower() == region_id.lower()]
-    
-    if not bridges:
-        return jsonify({"error": "Region not found"}), 404
-    
-    region_data = {
-        "region_id": region_id,
-        "bridges": bridges
-    }
-    return jsonify(region_data)
+    try:
+        with open("app/data/bridges.json", "r") as f:
+            data = json.load(f)
+
+        region_bridges = [bridge for bridge in data if bridge["Region"].lower() == region_id.lower()]
+        if not region_bridges:
+            return jsonify({"error": "Region not found"}), 404
+
+        # Apply AHP prioritization
+        region_bridges = prioritize_bridges(region_bridges)
+        region_bridges = convert_to_serializable(region_bridges)
+        return jsonify(region_bridges)
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
