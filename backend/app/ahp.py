@@ -55,3 +55,12 @@ def prioritize_bridges(bridges):
         bridge["Rank"] = rank
 
     return bridges_sorted
+
+
+def convert_to_serializable(bridges):
+    """Convert np.float64 and other non-serializable types to native Python types."""
+    for bridge in bridges:
+        for key, value in bridge.items():
+            if isinstance(value, np.float64):
+                bridge[key] = float(value)
+    return bridges
