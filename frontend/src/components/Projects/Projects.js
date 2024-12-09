@@ -9,10 +9,10 @@ function Projects() {
         { id: 'kherson', name: 'Kherson', image: '/images/kherson.jpg' },
         { id: 'donetsk', name: 'Donetsk', image: '/images/donetsk.jpg' },
         { id: 'kyiv', name: 'Kyiv', image: '/images/kyiv.jpg' },
-        { id: 'vinnytsia', name: 'Vinnytsia', image: '/images/vinnytsia.jpg' },
+        { id: 'mykolaiv', name: 'Mykolaiv', image: '/images/vinnytsia.jpg' },
         { id: 'luhansk', name: 'Luhansk', image: '/images/luhansk.jpg' },
-        { id: 'sumy', name: 'Sumy', image: '/images/sumy.webp' },
-        { id: 'kherson', name: 'Kherson', image: '/images/kherson.webp' },
+        { id: 'odesa', name: 'Odesa', image: '/images/sumy.webp' },
+        { id: 'zaporizhzhia', name: 'Zaporizhzhia', image: '/images/kherson.webp' },
       ];
 
 

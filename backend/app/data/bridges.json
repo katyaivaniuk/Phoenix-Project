@@ -7,8 +7,8 @@
       "Reconstruction Costs": 556311.00,
       "Volume": 3200,
       "Total Area of the Damage": 185.437,
-      "Latitude": 48.5937,
-      "Longitude": 37.9986
+      "Latitude": 48.59326858376143, 
+      "Longitude": 37.98628138529925
   },
   {
       "Bridge ID": "ID013",
@@ -18,8 +18,8 @@
       "Reconstruction Costs": 1887840.00,
       "Volume": 6800,
       "Total Area of the Damage": 629.28,
-      "Latitude": 48.6000,
-      "Longitude": 37.9990
+      "Latitude": 48.86906001565378, 
+      "Longitude": 38.093442222102865
   },
   {
       "Bridge ID": "ID021",
@@ -29,8 +29,8 @@
       "Reconstruction Costs": 4176000.00,
       "Volume": 8700,
       "Total Area of the Damage": 1392,
-      "Latitude": 48.6100,
-      "Longitude": 38.0000
+      "Latitude": 49.019111, 
+      "Longitude": 37.511322
   },
   {
       "Bridge ID": "ID015",
@@ -40,8 +40,8 @@
       "Reconstruction Costs": 710964.00,
       "Volume": 8000,
       "Total Area of the Damage": 236.988,
-      "Latitude": 49.9000,
-      "Longitude": 36.3000
+      "Latitude": 50.075065, 
+      "Longitude": 36.791751
   },
   {
       "Bridge ID": "ID016",
@@ -51,8 +51,8 @@
       "Reconstruction Costs": 1972860.00,
       "Volume": 120,
       "Total Area of the Damage": 657.62,
-      "Latitude": 50.0000,
-      "Longitude": 36.4000
+      "Latitude": 50.142151, 
+      "Longitude": 36.260041
   },
   {
       "Bridge ID": "ID020",
@@ -62,8 +62,8 @@
       "Reconstruction Costs": 1326960.00,
       "Volume": 3500,
       "Total Area of the Damage": 442.32,
-      "Latitude": 49.8000,
-      "Longitude": 36.2000
+      "Latitude": 49.343642, 
+      "Longitude": 37.525077
   },
   {
       "Bridge ID": "ID001",
@@ -73,8 +73,8 @@
       "Reconstruction Costs": 6825000.00,
       "Volume": 7600,
       "Total Area of the Damage": 2275,
-      "Latitude": 46.7000,
-      "Longitude": 32.6000
+      "Latitude": 46.669124, 
+      "Longitude": 32.719966
   },
   {
       "Bridge ID": "ID005",
@@ -84,8 +84,8 @@
       "Reconstruction Costs": 963360.00,
       "Volume": 8100,
       "Total Area of the Damage": 321.12,
-      "Latitude": 46.5000,
-      "Longitude": 33.7000
+      "Latitude": 45.989463, 
+      "Longitude": 34.549911
   },
   {
       "Bridge ID": "ID009",
@@ -95,8 +95,8 @@
       "Reconstruction Costs": 6129900.00,
       "Volume": 9400,
       "Total Area of the Damage": 2043.3,
-      "Latitude": 46.4000,
-      "Longitude": 33.6000
+      "Latitude": 46.743442923888, 
+      "Longitude": 32.81138011895965
   },
   {
       "Bridge ID": "ID011",
@@ -106,8 +106,8 @@
       "Reconstruction Costs": 719550.00,
       "Volume": 5300,
       "Total Area of the Damage": 239.85,
-      "Latitude": 46.1000,
-      "Longitude": 33.8000
+      "Latitude": 46.17347271489504, 
+      "Longitude": 34.773030458917496
   },
   {
       "Bridge ID": "ID006",
@@ -117,8 +117,8 @@
       "Reconstruction Costs": 435348.00,
       "Volume": 9500,
       "Total Area of the Damage": 145.116,
-      "Latitude": 46.2000,
-      "Longitude": 33.9000
+      "Latitude": 45.98830881278158, 
+      "Longitude": 34.5518644021722
   },
   {
       "Bridge ID": "ID003",
@@ -128,8 +128,8 @@
       "Reconstruction Costs": 3527160.00,
       "Volume": 2400,
       "Total Area of the Damage": 1175.72,
-      "Latitude": 50.3000,
-      "Longitude": 30.5000
+      "Latitude": 50.51082743234649, 
+      "Longitude": 30.258850904528572
   },
   {
       "Bridge ID": "ID022",
@@ -139,8 +139,8 @@
       "Reconstruction Costs": 821280.00,
       "Volume": 3300,
       "Total Area of the Damage": 273.76,
-      "Latitude": 50.4000,
-      "Longitude": 30.6000
+      "Latitude": 50.49502197170159, 
+      "Longitude": 31.138975081450454
   },
   {
       "Bridge ID": "ID007",
@@ -150,8 +150,8 @@
       "Reconstruction Costs": 762000.00,
       "Volume": 1800,
       "Total Area of the Damage": 254,
-      "Latitude": 48.4000,
-      "Longitude": 39.3000
+      "Latitude": 49.21620256184143, 
+      "Longitude": 38.185693173994984
   },
   {
       "Bridge ID": "ID010",
@@ -161,8 +161,8 @@
       "Reconstruction Costs": 1499400.00,
       "Volume": 7300,
       "Total Area of the Damage": 499.8,
-      "Latitude": 48.5000,
-      "Longitude": 39.4000
+      "Latitude": 48.92470068143135, 
+      "Longitude": 38.437059291858844
   },
   {
       "Bridge ID": "ID017",
@@ -172,30 +172,30 @@
       "Reconstruction Costs": 4628400.00,
       "Volume": 9350,
       "Total Area of the Damage": 1542.8,
-      "Latitude": 48.6000,
-      "Longitude": 39.5000
+      "Latitude": 48.575530270269454, 
+      "Longitude": 39.2865461615068
   },
   {
       "Bridge ID": "ID018",
       "Bridge Name": "Borova Highway Bridge",
       "Region": "Luhansk",
-      "Bridge Function": "Railway",
+      "Bridge Function": "Highway",
       "Reconstruction Costs": 1047915.00,
       "Volume": 1200,
       "Total Area of the Damage": 349.305,
-      "Latitude": 48.7000,
-      "Longitude": 39.6000
+      "Latitude": 48.967391280916914, 
+      "Longitude":  38.46182281505272
   },
   {
       "Bridge ID": "ID019",
       "Bridge Name": "Borova Railway Bridge",
       "Region": "Luhansk",
-      "Bridge Function": "Highway",
+      "Bridge Function": "Railway",
       "Reconstruction Costs": 582768.00,
       "Volume": 2700,
       "Total Area of the Damage": 194.256,
-      "Latitude": 48.8000,
-      "Longitude": 39.7000
+      "Latitude":48.967105080202174, 
+      "Longitude": 38.46100295802945
   },
   {
       "Bridge ID": "ID008",
@@ -210,14 +210,14 @@
   },
   {
       "Bridge ID": "ID012",
-      "Bridge Name": "Zakota Bridge",
+      "Bridge Name": "Zatoka Bridge",
       "Region": "Odessa",
       "Bridge Function": "Highway",
       "Reconstruction Costs": 3862320.00,
       "Volume": 6800,
       "Total Area of the Damage": 1287.44,
-      "Latitude": 46.0000,
-      "Longitude": 30.7000
+      "Latitude": 46.07633,
+      "Longitude":  30.46987
   },
   {
       "Bridge ID": "ID002",
@@ -227,18 +227,18 @@
       "Reconstruction Costs": 1778280.00,
       "Volume": 1900,
       "Total Area of the Damage": 592.76,
-      "Latitude": 47.9000,
-      "Longitude": 35.3000
+      "Latitude": 46.84216064913073, 
+      "Longitude": 35.40754765548516
   },
   {
       "Bridge ID": "ID014",
       "Bridge Name": "Starobohdanivka Railway Bridge",
       "Region": "Zaporizhzhia",
-      "Bridge Function": "Highway",
+      "Bridge Function": "Railway",
       "Reconstruction Costs": 3242160.00,
       "Volume": 2900,
       "Total Area of the Damage": 1080.72,
-      "Latitude": 47.8000,
-      "Longitude": 35.2000
+      "Latitude": 46.971283, 
+      "Longitude": 35.441457
   }
 ]

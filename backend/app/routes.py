@@ -53,8 +53,6 @@ def get_region_data(region_id):
         # Apply AHP prioritization
         region_bridges = prioritize_bridges(region_bridges)
         region_bridges = convert_to_serializable(region_bridges)
-        print(region_bridges)
-
         return jsonify(region_bridges)
 
     except Exception as e:
