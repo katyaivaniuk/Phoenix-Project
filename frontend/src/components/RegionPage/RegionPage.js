@@ -64,6 +64,14 @@ function RegionPage() {
                     {bridges.map((bridge) => (
                         <div key={bridge["Bridge ID"]} className="bridge-card">
                             <img src={`/images/${bridge["Bridge ID"]}.jpg`} alt={bridge["Bridge Name"]} />
+                            <div className="tooltip-container">
+                                <div className={`rank-badge rank-${bridge["Rank"]}`}>
+                                    Priority {bridge["Rank"]}
+                                </div>
+                                <span className="tooltip-text">
+                                    Rank {bridge["Rank"]}: Based on AHP score considering traffic volume, reconstruction costs, and function.
+                                </span>
+                            </div>
                             <h3>#{bridge["Rank"]} {bridge["Bridge Name"]}</h3> 
                             <p><strong>Function:</strong> {bridge["Bridge Function"]}</p>
                             <p><strong>Reconstruction Cost:</strong> €{bridge["Reconstruction Costs"].toLocaleString()}</p>
