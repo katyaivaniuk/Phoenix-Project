@@ -6,14 +6,16 @@ function Layout() {
     return (
         <div className="site-container">
             <header>
-                <div className="top-bar">
-                    <div className="logo-container">
-                        <img src="/images/Logo.png" alt="Phoenix Ukraine Logo" className="logo" />
-                        <h1 className="site-title">Phoenix Ukraine</h1>
+                <nav className="nav-bar">
+                    <div className="nav-left">
+                        <Link to="/">
+                            <img src="/images/Logo.png" alt="Phoenix Ukraine Logo" className="nav-logo" />
+                        </Link>
+                        <Link to="/" style={{ textDecoration: 'none' }}>
+                            <span className="nav-title">Phoenix Ukraine</span>
+                        </Link>
                     </div>
-                </div>
-                <nav className="menu-bar">
-                    <ul className="menu">
+                    <ul className="nav-menu">
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/news">News</Link></li>
                         <li><Link to="/projects">Projects</Link></li>
