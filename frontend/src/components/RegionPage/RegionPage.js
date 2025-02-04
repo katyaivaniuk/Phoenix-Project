@@ -9,7 +9,9 @@ function RegionPage() {
     const [error, setError] = useState(null);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [activeStep, setActiveStep] = useState(0);
-    const [showMatrix, setShowMatrix] = useState(false);
+    const [showMatrix, setShowMatrix] = useState(null);
+    const [selectedAnswer, setSelectedAnswer] = useState(null);
+    const [showExplanation, setShowExplanation] = useState(false);
 
     const staticImages = [
         '/images/static1.jpg',
@@ -46,6 +48,43 @@ function RegionPage() {
 
     const ahpSteps = [
         {
+            title: "Why AHP Algorithm",
+            content: "The Analytic Hierarchy Process (AHP) is our chosen method for bridge prioritization because:",
+            keyPoints: [
+                {
+                    title: "Complex Decision Making",
+                    description: "AHP breaks down complex decisions into simpler comparisons, making it perfect for evaluating multiple bridges with different characteristics.",
+                    icon: "🔄"
+                },
+                {
+                    title: "Scientific Approach",
+                    description: "It provides a mathematical foundation for prioritization, removing subjective bias from decision-making.",
+                    icon: "📊"
+                },
+                {
+                    title: "Flexibility",
+                    description: "AHP can easily adapt to different criteria weights based on regional needs and priorities.",
+                    icon: "🔧"
+                },
+                {
+                    title: "Proven Track Record",
+                    description: "Used worldwide in infrastructure planning, disaster recovery, and resource allocation.",
+                    icon: "🌍"
+                }
+            ],
+            interactive: {
+                question: "Why is systematic prioritization important?",
+                options: [
+                    "Limited resources must be allocated efficiently",
+                    "Some bridges are more critical than others",
+                    "Recovery speed impacts regional economy",
+                    "All of the above"
+                ],
+                correctAnswer: 3,
+                explanation: "Bridge reconstruction requires systematic prioritization because we face limited resources, varying bridge importance, and economic impact considerations."
+            }
+        },
+        {
             title: "Understanding AHP Matrix",
             content: "The Analytic Hierarchy Process starts with a pairwise comparison matrix:",
             matrix: [
@@ -53,11 +92,14 @@ function RegionPage() {
                 [1/7, 1, 1/3],
                 [1/3, 3, 1]
             ],
-            explanation: [
-                "7 in position (1,2) means: Traffic Volume is 7× more important than Costs",
-                "3 in position (1,3) means: Traffic Volume is 3× more important than Function",
-                "3 in position (2,3) means: Function is 3× more important than Costs"
-            ]
+            explanations: {
+                "0-1": "Traffic Volume is 7× more important than Costs",
+                "0-2": "Traffic Volume is 3× more important than Function",
+                "1-0": "Costs is 1/7× as important as Traffic Volume",
+                "1-2": "Costs is 1/3× as important as Function",
+                "2-0": "Function is 1/3× as important as Traffic Volume",
+                "2-1": "Function is 3× more important than Costs"
+            }
         },
         {
             title: "Calculated Weights",
@@ -103,6 +145,137 @@ function RegionPage() {
         fetchRegionData();
     }, [regionId]);
 
+    const renderStepContent = () => {
+        const step = ahpSteps[activeStep];
+        if (!step) return null;
+
+        switch (activeStep) {
+            case 0:
+                return (
+                    <div className="why-ahp-section">
+                        <p className="step-intro">{step.content}</p>
+                        
+                        <div className="key-points-grid">
+                            {step.keyPoints?.map((point, index) => (
+                                <div key={index} className="key-point-card">
+                                    <span className="point-icon">{point.icon}</span>
+                                    <h4>{point.title}</h4>
+                                    <p>{point.description}</p>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="interactive-quiz">
+                            <h4>{step.interactive?.question}</h4>
+                            <div className="quiz-options">
+                                {step.interactive?.options?.map((option, index) => (
+                                    <button
+                                        key={index}
+                                        className={`quiz-option ${selectedAnswer === index ? 'selected' : ''} 
+                                                  ${showExplanation && index === step.interactive.correctAnswer ? 'correct' : ''}
+                                                  ${showExplanation && selectedAnswer === index && index !== step.interactive.correctAnswer ? 'incorrect' : ''}`}
+                                        onClick={() => {
+                                            setSelectedAnswer(index);
+                                            setShowExplanation(true);
+                                        }}
+                                    >
+                                        {option}
+                                    </button>
+                                ))}
+                            </div>
+                            {showExplanation && (
+                                <div className="explanation-box">
+                                    {step.interactive?.explanation}
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                );
+
+            case 1:
+                return (
+                    <div className="matrix-section">
+                        <p className="matrix-intro">{step.content}</p>
+                        <div className="matrix-container">
+                            <table className="comparison-matrix">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Traffic</th>
+                                        <th>Costs</th>
+                                        <th>Function</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {step.matrix?.map((row, i) => (
+                                        <tr key={i}>
+                                            <th>{i === 0 ? 'Traffic' : i === 1 ? 'Costs' : 'Function'}</th>
+                                            {row.map((value, j) => (
+                                                <td 
+                                                    key={j}
+                                                    className="matrix-cell"
+                                                    onMouseEnter={() => setShowMatrix(`${i}-${j}`)}
+                                                    onMouseLeave={() => setShowMatrix(null)}
+                                                >
+                                                    {value.toFixed(2)}
+                                                    {showMatrix === `${i}-${j}` && step.explanations?.[`${i}-${j}`] && (
+                                                        <div className="matrix-tooltip">
+                                                            {step.explanations[`${i}-${j}`]}
+                                                        </div>
+                                                    )}
+                                                </td>
+                                            ))}
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                );
+
+            case 2:
+                return (
+                    <div className="weights-section">
+                        <p className="weights-intro">{step.content}</p>
+                        {step.weights?.map((item, index) => (
+                            <div key={index} className="weight-item">
+                                <div className="weight-header">
+                                    <span className="weight-label">{item.label}</span>
+                                    <span className="weight-value">{item.weight}%</span>
+                                </div>
+                                <div className="weight-bar-container">
+                                    <div 
+                                        className="weight-bar"
+                                        style={{ width: `${item.weight}%` }}
+                                    />
+                                </div>
+                                <p className="weight-description">{item.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                );
+
+            case 3:
+                return (
+                    <div className="formula-section">
+                        <div className="formula-display">
+                            <p className="formula-intro">{step.content}</p>
+                            <div className="formula-box">
+                                {step.formula}
+                            </div>
+                            <div className="formula-explanation">
+                                <p>This formula combines all three factors with their respective weights to calculate a final priority score for each bridge.</p>
+                                <p>Higher scores indicate higher priority for reconstruction.</p>
+                            </div>
+                        </div>
+                    </div>
+                );
+
+            default:
+                return null;
+        }
+    };
+
     if (error) {
         return <p>There are no bridges in need of reconstruction.</p>;
     }
@@ -119,6 +292,28 @@ function RegionPage() {
                     {staticImages.map((image, index) => (
                         <img key={index} src={image} alt={`Reconstruction`} className="region-image" />
                     ))}
+                </div>
+            </section>
+            <section className="ahp-explanation-section">
+                <h2>Bridge Prioritization Algorithm</h2>
+                
+                <div className="ahp-interactive-container">
+                    <div className="ahp-navigation">
+                        {ahpSteps.map((step, index) => (
+                            <div 
+                                key={index}
+                                className={`step-indicator ${activeStep === index ? 'active' : ''}`}
+                                onClick={() => setActiveStep(index)}
+                            >
+                                <div className="step-number">{index + 1}</div>
+                                <div className="step-title">{step.title}</div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="ahp-content">
+                        {renderStepContent()}
+                    </div>
                 </div>
             </section>
             <section className="region-bridge-section">
@@ -146,95 +341,17 @@ function RegionPage() {
                     ))}
                 </div>
             </section>
-            <section className="ahp-explanation-section">
-                <h2>Bridge Prioritization Algorithm</h2>
-                
-                <div className="ahp-interactive-container">
-                    <div className="ahp-navigation">
-                        {ahpSteps.map((step, index) => (
-                            <div 
-                                key={index}
-                                className={`step-indicator ${activeStep === index ? 'active' : ''}`}
-                                onClick={() => setActiveStep(index)}
-                            >
-                                <div className="step-number">{index + 1}</div>
-                                <div className="step-title">{step.title}</div>
-                            </div>
-                        ))}
+            <section className="ahp-carousel-section">
+                <div className="carousel-container">
+                    <button onClick={handlePrev} className="arrow left-arrow">&#8592;</button>
+                    <div className="card">
+                        <h3>{explanationCards[currentIndex].title}</h3>
+                        <p>{explanationCards[currentIndex].content}</p>
                     </div>
-
-                    <div className="ahp-content">
-                        {activeStep === 0 && (
-                            <div className="matrix-section">
-                                <p className="matrix-intro">{ahpSteps[0].content}</p>
-                                <div className="matrix-container">
-                                    <div className="matrix-labels">
-                                        <div className="matrix-corner"></div>
-                                        <div>Traffic</div>
-                                        <div>Costs</div>
-                                        <div>Function</div>
-                                    </div>
-                                    {ahpSteps[0].matrix.map((row, i) => (
-                                        <div key={i} className="matrix-row">
-                                            <div className="row-label">
-                                                {i === 0 ? 'Traffic' : i === 1 ? 'Costs' : 'Function'}
-                                            </div>
-                                            {row.map((value, j) => (
-                                                <div 
-                                                    key={j} 
-                                                    className="matrix-cell"
-                                                    onMouseEnter={() => setShowMatrix(`${i}-${j}`)}
-                                                    onMouseLeave={() => setShowMatrix(null)}
-                                                >
-                                                    {typeof value === 'number' ? value.toFixed(2) : value}
-                                                </div>
-                                            ))}
-                                        </div>
-                                    ))}
-                                </div>
-                                <div className="matrix-explanation">
-                                    {showMatrix && (
-                                        <div className="explanation-popup">
-                                            {ahpSteps[0].explanation[showMatrix]}
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-                        )}
-
-                        {activeStep === 1 && (
-                            <div className="weights-section">
-                                {ahpSteps[1].weights.map((item, index) => (
-                                    <div key={index} className="weight-item">
-                                        <div className="weight-header">
-                                            <span className="weight-label">{item.label}</span>
-                                            <span className="weight-value">{item.weight}%</span>
-                                        </div>
-                                        <div className="weight-bar-container">
-                                            <div 
-                                                className="weight-bar"
-                                                style={{ width: `${item.weight}%` }}
-                                            />
-                                        </div>
-                                        <p className="weight-description">{item.description}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        )}
-
-                        {activeStep === 2 && (
-                            <div className="formula-section">
-                                <div className="formula-display">
-                                    <p className="formula-intro">{ahpSteps[2].content}</p>
-                                    <div className="formula-box">
-                                        {ahpSteps[2].formula}
-                                    </div>
-                                </div>
-                            </div>
-                        )}
-                    </div>
+                    <button onClick={handleNext} className="arrow right-arrow">&#8594;</button>
                 </div>
             </section>
+
         </div>
     );
 }
