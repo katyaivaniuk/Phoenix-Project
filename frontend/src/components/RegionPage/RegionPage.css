@@ -1,20 +1,30 @@
 .region-header {
-    display: flex; 
-    align-items: flex-start; 
-    justify-content: space-between; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     color: white;
-    padding: 40px 20px;
+    padding: 40px 60px;
+    margin-bottom: 50px;
     background-color: #000;
-    position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .region-header h1 {
     font-size: 45px;
     font-weight: bold;
-    margin-top: 110px;
-    margin-left: 60px;
+    margin: 0;
     text-transform: capitalize;
-    max-width: 300px; 
+    max-width: 400px;
+}
+
+.region-image {
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-left: 40px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .region-images {
@@ -352,7 +362,6 @@
 .interactive-quiz {
     margin-top: 30px;
     padding: 20px;
-    background: #000;
     border-radius: 8px;
 }
 
@@ -364,10 +373,10 @@
 
 .quiz-option {
     padding: 15px;
-    border: 1px solid #ddd;
+    border: 0.5px solid #ddd;
     color: white;
     border-radius: 6px;
-    background: #000;
+    background: rgba(18, 18, 18, 0.95);
     cursor: pointer;
     transition: all 0.2s;
     text-align: left;
@@ -411,7 +420,7 @@
 
 .comparison-matrix {
     border-collapse: collapse;
-    background: #000;
+    background: rgba(18, 18, 18, 0.95);
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
@@ -424,7 +433,7 @@
 }
 
 .comparison-matrix th {
-    background-color: #000;
+    background-color: rgba(18, 18, 18, 0.95);
     font-weight: bold;
 }
 
@@ -463,11 +472,8 @@
     max-width: 800px;
     margin: 0 auto;
     text-align: left;
-
     background: rgba(18, 18, 18, 0.95);
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .weight-item {
@@ -563,24 +569,21 @@
     font-size: 15px;
 }
 
-@media (max-width: 768px) {
-    .ahp-navigation {
+@media (max-width: 1024px) {
+    .region-header {
         flex-direction: column;
-        gap: 10px;
+        padding: 30px;
+        text-align: center;
     }
 
-    .key-points-grid {
-        grid-template-columns: 1fr;
+    .region-header h1 {
+        margin-bottom: 30px;
+        max-width: 100%;
     }
 
-    .comparison-matrix th,
-    .comparison-matrix td {
-        padding: 8px;
-        font-size: 0.9em;
-    }
-
-    .matrix-tooltip {
-        font-size: 12px;
-        padding: 6px 8px;
+    .region-image {
+        width: 100%;
+        max-width: 600px;
+        margin-left: 0;
     }
 }

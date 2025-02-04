@@ -13,15 +13,15 @@ function RegionPage() {
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [showExplanation, setShowExplanation] = useState(false);
 
-    const staticImages = [
-        '/images/static1.jpg',
-        '/images/static2.webp',
-        '/images/static3.jpg',
-        '/images/static4.webp',
-        '/images/static5.webp',
-        '/images/static6.jpg',
-        '/images/static7.jpg',
-    ];
+    const staticImages = {
+        'donetsk': '/images/static1.jpg',
+        'luhansk': '/images/static2.webp',
+        'kharkiv': '/images/static3.jpg',
+        'kherson': '/images/static4.webp',
+        'zaporizhzhia': '/images/static5.webp',
+        'mykolaiv': '/images/static6.jpg',
+        'dnipropetrovsk': '/images/static7.jpg',
+    };
 
     const explanationCards = [
         {
@@ -129,6 +129,8 @@ function RegionPage() {
     };
 
     useEffect(() => {
+        console.log('Current regionId:', regionId);
+        console.log('Image path:', staticImages[regionId.toLowerCase()]);
         const fetchRegionData = async () => {
             try {
                 const response = await fetch(`http://127.0.0.1:5000/api/regions/${regionId.toLowerCase()}`);
@@ -286,11 +288,14 @@ function RegionPage() {
         <div className="region-page">
             <section className="region-header">
                 <h1>{regionId.charAt(0).toUpperCase() + regionId.slice(1).toLowerCase()} Reconstruction Projects</h1>
-                <div className="region-images">
-                    {staticImages.map((image, index) => (
-                        <img key={index} src={image} alt={`Reconstruction`} className="region-image" />
-                    ))}
-                </div>
+                {staticImages[regionId.toLowerCase()] && (
+                    <img 
+                        src={staticImages[regionId.toLowerCase()]} 
+                        alt={`${regionId} Region`} 
+                        className="region-image"
+                        onError={(e) => console.error('Image failed to load:', e.target.src)} 
+                    />
+                )}
             </section>
             <section className="ahp-explanation-section">
                 <h2>Bridge Prioritization Algorithm</h2>

@@ -1,8 +1,7 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 html, body {
-    min-height: 100vh;  /* Sets the minimum height to be 100% of the viewport height */
-    height: 100%;  /* This can still be set to 100% to ensure it covers at least the viewport height */
+    min-height: 100vh;  
+    height: 100%;  
     margin: 0;
     padding: 0;
     display: flex;
@@ -12,16 +11,14 @@ html, body {
 .site-container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Use viewport height to ensure footer can sit at the bottom */
+    min-height: 100vh; 
 }
 
 .content {
-    flex: 1;  /* Ensures that the content area expands to fill available space, pushing the footer down */
+    flex: 1; 
     padding: 40px;
-    overflow: auto;  /* Adds scroll to the main content if it overflows */
+    overflow: auto;  
 }
-
-
 
 body {
     margin: 0;
@@ -50,8 +47,8 @@ header {
 }
 
 .logo {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     margin-right: 5px;
 
 }
@@ -67,7 +64,7 @@ header {
 .menu-bar {
     border-top: 1px solid white;
     padding: 10px 20px;
-    margin-bottom: 40px; /* Adds space below the menu bar */
+    margin-bottom: 40px; 
 
 }
 
@@ -101,7 +98,7 @@ footer {
     color: white;
     padding: 20px;
     display: flex;
-    justify-content: center; /* Centers the footer container within the footer */
+    justify-content: center; 
     align-items: center;
 }
 
@@ -109,17 +106,17 @@ footer {
     width: 100%;
     height: 220px;
     display: flex;
-    justify-content: space-between; /* Adjust if necessary, maybe 'center' if you want everything centered */
+    justify-content: space-between; 
     align-items: center;
 }
 
 .footer-logo {
-    width: 160px; /* Adjust size as needed */
+    width: 160px; 
     height: 170px;
 }
 
 .footer-left, .footer-center, .footer-right {
-    flex: 1; /* Adjust this value to control the space each section takes */
+    flex: 1; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -137,15 +134,77 @@ footer {
 }
 
 .footer-center {
-    align-items: center; /* Ensure center alignment for the logo and name */
+    align-items: center; 
 }
 
 .footer-center h2 {
-    margin: 0; /* Ensure there are no margins affecting centering */
+    margin: 0; 
 }
 
-/* Remove large margins that could skew the alignment */
 .footer-right p, .footer-left p {
-    margin: 0; /* Reset margin to ensure even spacing and alignment */
-    text-align: center; /* Center align the text */
+    margin: 0; 
+    text-align: center; 
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    padding-left: 2rem;
+    background-color: #000;
+    box-shadow: 0 2px 4px rgba(255,255,255,0.1);
+    border-bottom: 1px solid #fff;
+    height: 70px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: -1rem; 
+}
+
+.nav-logo {
+    height: 80px;
+    width: auto;
+}
+
+.nav-title {
+    font-size: 2rem; 
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.3rem; 
+}
+
+.nav-menu li a:hover {
+    color: #007bff;
+}
+
+
+.content {
+    padding-top: 1rem; 
+}
+
+.about-section {
+    margin-top: 3rem; 
+    padding-top: 2rem;
+}
+
+.nav-left a:hover {
+    opacity: 0.8; 
 }
