@@ -93,11 +93,11 @@ function RegionPage() {
                 [1/3, 3, 1]
             ],
             explanations: {
-                "0-1": "Traffic Volume is 7× more important than Costs",
-                "0-2": "Traffic Volume is 3× more important than Function",
-                "1-0": "Costs is 1/7× as important as Traffic Volume",
+                "0-1": "Average Car Traffic Volume per Day is 7× more important than Costs",
+                "0-2": "Average Car Traffic Volume per Day is 3× more important than Function",
+                "1-0": "Costs is 1/7× as important as Average Car Traffic Volume per Day",
                 "1-2": "Costs is 1/3× as important as Function",
-                "2-0": "Function is 1/3× as important as Traffic Volume",
+                "2-0": "Function is 1/3× as important as Average Car Traffic Volume per Day",
                 "2-1": "Function is 3× more important than Costs"
             }
         },
@@ -105,15 +105,14 @@ function RegionPage() {
             title: "Calculated Weights",
             content: "After mathematical calculations, we get the following weights:",
             weights: [
-                { label: "Traffic Volume", weight: 67, description: "Heaviest weight due to direct impact on population" },
+                { label: "Average Car Traffic Volume per Day", weight: 67, description: "Heaviest weight due to direct impact on population" },
                 { label: "Bridge Function", weight: 24, description: "Considers the bridge's role in infrastructure" },
                 { label: "Reconstruction Costs", weight: 9, description: "Economic efficiency factor" }
             ]
         },
         {
             title: "Scoring Formula",
-            content: "Each bridge receives a final score based on these weights:",
-            formula: "Score = (0.67 × Traffic) + (0.24 × Function) + (0.09 × Cost)"
+            formula: "Score = (0.67 × Average Car Traffic Volume per Day) + (0.24 × Bridge Function) + (0.09 × Reconstruction Cost)"
         }
     ];
 
@@ -201,15 +200,15 @@ function RegionPage() {
                                 <thead>
                                     <tr>
                                         <th></th>
-                                        <th>Traffic</th>
-                                        <th>Costs</th>
-                                        <th>Function</th>
+                                        <th>Average Car Traffic Volume per Day</th>
+                                        <th>Reconstruction Costs</th>
+                                        <th>Bridge Function (Highway vs. Railway)</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {step.matrix?.map((row, i) => (
                                         <tr key={i}>
-                                            <th>{i === 0 ? 'Traffic' : i === 1 ? 'Costs' : 'Function'}</th>
+                                            <th>{i === 0 ? 'Average Car Traffic Volume per Day' : i === 1 ? 'Reconstruction Costs' : 'Bridge Function (Highway vs. Railway)'}</th>
                                             {row.map((value, j) => (
                                                 <td 
                                                     key={j}
@@ -264,8 +263,7 @@ function RegionPage() {
                                 {step.formula}
                             </div>
                             <div className="formula-explanation">
-                                <p>This formula combines all three factors with their respective weights to calculate a final priority score for each bridge.</p>
-                                <p>Higher scores indicate higher priority for reconstruction.</p>
+                                <p> Each bridge receives a final score based on these weights. This formula combines all three factors with their respective weights to calculate a final priority score for each bridge.Higher scores indicate higher priority for reconstruction.</p>
                             </div>
                         </div>
                     </div>
@@ -339,16 +337,6 @@ function RegionPage() {
                             <p><strong>AHP Score:</strong> {bridge["AHP Score"].toFixed(4)}</p> 
                         </div>
                     ))}
-                </div>
-            </section>
-            <section className="ahp-carousel-section">
-                <div className="carousel-container">
-                    <button onClick={handlePrev} className="arrow left-arrow">&#8592;</button>
-                    <div className="card">
-                        <h3>{explanationCards[currentIndex].title}</h3>
-                        <p>{explanationCards[currentIndex].content}</p>
-                    </div>
-                    <button onClick={handleNext} className="arrow right-arrow">&#8594;</button>
                 </div>
             </section>
 

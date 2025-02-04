@@ -194,28 +194,6 @@
     opacity: 1;
 }
 
-.ahp-carousel-section {
-    margin: 40px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(18, 18, 18, 0.95);
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 1300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.carousel-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    position: relative;
-    max-width: 100%;
-}
-
 .card {
     background-color: rgba(51, 51, 51, 0.95);
     padding: 20px;
@@ -278,10 +256,11 @@
 
 .ahp-explanation-section {
     background: rgba(18, 18, 18, 0.95);
+    text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    margin: 20px auto;
+    margin: 100px auto;
     padding: 30px;
     max-width: 1300px;
     color: white;
@@ -289,7 +268,7 @@
 }
 
 .ahp-interactive-container {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .ahp-navigation {
@@ -310,7 +289,7 @@
 }
 
 .step-indicator:hover {
-    background: #f0f0f0;
+    background: #fffbfbb9;
 }
 
 .step-indicator.active {
@@ -337,7 +316,7 @@
 
 .step-intro {
     font-size: 1.1em;
-    color: #333;
+    color: white;
     margin-bottom: 30px;
 }
 
@@ -385,17 +364,19 @@
 
 .quiz-option {
     padding: 15px;
-    border: 2px solid #ddd;
+    border: 1px solid #ddd;
+    color: white;
     border-radius: 6px;
     background: #000;
     cursor: pointer;
     transition: all 0.2s;
     text-align: left;
     width: 100%;
+    font-family: inherit;
 }
 
 .quiz-option:hover {
-    background: #f0f0f0;
+    background: rgba(49, 48, 48, 0.95);
 }
 
 .quiz-option.selected {
@@ -404,12 +385,10 @@
 
 .quiz-option.correct {
     border-color: #2e7d32;
-    background: #e8f5e9;
 }
 
 .quiz-option.incorrect {
     border-color: #d32f2f;
-    background: #ffebee;
 }
 
 .explanation-box {
@@ -483,43 +462,71 @@
     padding: 20px;
     max-width: 800px;
     margin: 0 auto;
+    text-align: left;
+
+    background: rgba(18, 18, 18, 0.95);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .weight-item {
-    margin-bottom: 25px;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(51, 51, 51, 0.95);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease;
+}
+
+.weight-item:hover {
+    background: rgba(58, 111, 213, 0.1);
 }
 
 .weight-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .weight-label {
     font-weight: 500;
+    color: #e0e0e0;
 }
 
 .weight-value {
     font-weight: bold;
-    color: #1976d2;
+    color: #3a6fd5;
 }
 
 .weight-bar-container {
-    background: #f0f0f0;
-    border-radius: 4px;
-    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    height: 15px;
     overflow: hidden;
+    margin: 10px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .weight-bar {
-    background: #1976d2;
     height: 100%;
-    transition: width 0.5s ease-out;
+    background: linear-gradient(90deg, #3a6fd5, #5a8fe5);
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    color: white;
+    font-weight: bold;
+    transition: width 1s ease-out;
 }
 
+.weight-item:hover .weight-bar {
+    background: #5d91eb;
+}
+
+
 .weight-description {
-    margin-top: 8px;
-    color: #666;
+    margin-top: 12px;
+    color: #e0e0e0;
     font-size: 0.9em;
 }
 
@@ -534,7 +541,8 @@
 }
 
 .formula-box {
-    background: #f8f9fa;
+    background: #e3f2fd;
+    color: #1976d2;
     padding: 20px;
     border-radius: 8px;
     margin: 20px auto;
@@ -546,12 +554,13 @@
 
 .formula-explanation {
     margin-top: 20px;
-    text-align: left;
-    color: #666;
+    text-align: center;
+    color: rgba(232, 226, 226, 0.881);
 }
 
 .formula-explanation p {
     margin: 10px 0;
+    font-size: 15px;
 }
 
 @media (max-width: 768px) {
