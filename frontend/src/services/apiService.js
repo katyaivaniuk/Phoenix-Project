@@ -13,16 +13,17 @@ export const fetchData = async () => {
   }
 };
 
-// Fetch latest news
 export const fetchNews = async () => {
   try {
     const response = await axios.get(`${BASE_URL}/api/news`);
+    console.log('Fetched news:', response.data);  // Log the fetched news data
     return response.data;
   } catch (error) {
     console.error('Error fetching news:', error);
     throw error; // Rethrow to handle it in the component
   }
 };
+
 
 // Example for posting data
 export const postData = async (data) => {
@@ -37,11 +38,11 @@ export const postData = async (data) => {
 
 export const fetchFallbackNews = async () => {
   try {
-    const response = await fetch('/api/last-three-articles');  // Replace with your endpoint
-    const fallbackNews = await response.json();
-    return fallbackNews;
+    const response = await axios.get(`${BASE_URL}/api/news`);  // Use /api/news here as well
+    return response.data;
   } catch (error) {
     console.error('Error fetching fallback news:', error);
     return [];  // Return an empty array if there is an error
   }
 };
+

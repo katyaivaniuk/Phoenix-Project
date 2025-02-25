@@ -12,6 +12,9 @@ function RegionPage() {
     const [showMatrix, setShowMatrix] = useState(null);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [showExplanation, setShowExplanation] = useState(false);
+    const [selectedBridgeId, setSelectedBridgeId] = useState(null); // Track which card is toggled
+
+
 
     const staticImages = {
         'donetsk': '/images/static1.jpg',
@@ -127,6 +130,7 @@ function RegionPage() {
             prevIndex === explanationCards.length - 1 ? 0 : prevIndex + 1
         );
     };
+    
 
     useEffect(() => {
         console.log('Current regionId:', regionId);
@@ -145,6 +149,11 @@ function RegionPage() {
 
         fetchRegionData();
     }, [regionId]);
+
+    const handleToggleInfo = (bridgeId) => {
+        setSelectedBridgeId(prevId => (prevId === bridgeId ? null : bridgeId)); // Toggle selected bridge info
+    };
+
 
     const renderStepContent = () => {
         const step = ahpSteps[activeStep];
@@ -325,6 +334,11 @@ function RegionPage() {
                 <div className="bridge-cards">
                     {bridges.map((bridge) => (
                         <div key={bridge["Bridge ID"]} className="bridge-card">
+                            <div className="card-content">
+                                {/* Info Icon */}
+                                <div className="info-icon" onClick={() => handleToggleInfo(bridge["Bridge ID"])}>ℹ️</div>
+
+                                {/* Card front */}
                             <img src={`/images/${bridge["Bridge ID"]}.jpg`} alt={bridge["Bridge Name"]} />
                             <div className="tooltip-container">
                                 <div className={`rank-badge rank-${bridge["Rank"]}`}>
@@ -337,10 +351,19 @@ function RegionPage() {
                             <h3>#{bridge["Rank"]} {bridge["Bridge Name"]}</h3> 
                             <p><strong>Function:</strong> {bridge["Bridge Function"]}</p>
                             <p><strong>Reconstruction Cost:</strong> €{bridge["Reconstruction Costs"].toLocaleString()}</p>
-                            <p><strong>Volume:</strong> {bridge["Volume"]}</p>
                             <p><strong>Total Area of Damage:</strong> {bridge["Total Area of the Damage"]} m²</p>
+                            <p><strong>Average Traffic Volume:</strong> {bridge["Volume"]} cars/day</p>
+
                             <p><strong>AHP Score:</strong> {bridge["AHP Score"].toFixed(4)}</p> 
                         </div>
+                            {/* Toggle Content */}
+                            {selectedBridgeId === bridge["Bridge ID"] && (
+                            <div className="bridge-history">
+                                <h4>History of Deconstruction</h4>
+                                <p>{bridge["Deconstruction History"] || "No history available for this bridge."}</p>
+                            </div>
+                        )}
+                    </div>
                     ))}
                 </div>
             </section>
