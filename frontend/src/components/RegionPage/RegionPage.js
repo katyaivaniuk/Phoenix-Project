@@ -348,7 +348,7 @@ function RegionPage() {
                                     Rank {bridge["Rank"]}: Based on AHP score considering traffic volume, reconstruction costs, and function.
                                 </span>
                             </div>
-                            <h3>#{bridge["Rank"]} {bridge["Bridge Name"]}</h3> 
+                            <h3>{bridge["Bridge Name"]}</h3> 
                             <p><strong>Function:</strong> {bridge["Bridge Function"]}</p>
                             <p><strong>Reconstruction Cost:</strong> €{bridge["Reconstruction Costs"].toLocaleString()}</p>
                             <p><strong>Total Area of Damage:</strong> {bridge["Total Area of the Damage"]} m²</p>
