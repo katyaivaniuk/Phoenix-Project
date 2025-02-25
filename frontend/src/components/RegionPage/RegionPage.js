@@ -4,10 +4,9 @@ import './RegionPage.css';
 
 function RegionPage() {
     const { regionId } = useParams();
-    const [region, setRegion] = useState(null);
+    //const [region, setRegion] = useState(null);
     const [bridges, setBridges] = useState([]);
     const [error, setError] = useState(null);
-    const [currentIndex, setCurrentIndex] = useState(0);
     const [activeStep, setActiveStep] = useState(0);
     const [showMatrix, setShowMatrix] = useState(null);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -26,28 +25,6 @@ function RegionPage() {
         'dnipropetrovsk': '/images/static7.jpg',
     };
 
-    const explanationCards = [
-        {
-            title: "How Prioritization Works",
-            content: "The prioritization of bridges in this region is based on the Analytical Hierarchy Process (AHP) algorithm. This method assigns each bridge a priority score by evaluating three key factors.",
-        },
-        {
-            title: "Traffic Volume",
-            content: "Traffic Volume: The number of vehicles or trains using the bridge daily. This reflects the bridge's importance to regional connectivity.",
-        },
-        {
-            title: "Reconstruction Costs",
-            content: "Reconstruction Costs: The estimated cost of rebuilding the bridge. This ensures resources are allocated efficiently.",
-        },
-        {
-            title: "Bridge Function",
-            content: "Bridge Function: Whether the bridge serves as a highway, railway, or both. This highlights its role in infrastructure.",
-        },
-        {
-            title: "Conclusion",
-            content: "By evaluating these factors, the AHP algorithm ensures the most critical projects are prioritized to maximize regional recovery and impact.",
-        },
-    ];
 
     const ahpSteps = [
         {
@@ -118,28 +95,14 @@ function RegionPage() {
             formula: "Score = (0.67 × Average Car Traffic Volume per Day) + (0.24 × Bridge Function) + (0.09 × Reconstruction Cost)"
         }
     ];
-
-    const handlePrev = () => {
-        setCurrentIndex((prevIndex) =>
-            prevIndex === 0 ? explanationCards.length - 1 : prevIndex - 1
-        );
-    };
-
-    const handleNext = () => {
-        setCurrentIndex((prevIndex) =>
-            prevIndex === explanationCards.length - 1 ? 0 : prevIndex + 1
-        );
-    };
     
 
     useEffect(() => {
-        console.log('Current regionId:', regionId);
-        console.log('Image path:', staticImages[regionId.toLowerCase()]);
         const fetchRegionData = async () => {
             try {
                 const response = await fetch(`http://127.0.0.1:5000/api/regions/${regionId.toLowerCase()}`);
                 const data = await response.json();
-                setRegion(regionId); // Set the region name
+              //  setRegion(regionId); // Set the region name
                 setBridges(data);    // Set the bridges data
             } catch (err) {
                 console.error("Error fetching region data:", err);
