@@ -37,9 +37,10 @@ def get_latest_articles():
     }
 
     response = requests.get(url, params=params)
+
     if response.status_code != 200:
         return []
-    
+
     articles = response.json().get('articles')
     return filter_and_diversify_articles(articles)
 
@@ -116,6 +117,7 @@ def get_article_topic(content):
 
 if __name__ == "__main__":
     latest_articles = get_latest_articles()
+    print(latest_articles)
     for article in latest_articles:
         print(json.dumps(article, indent=2))
 
