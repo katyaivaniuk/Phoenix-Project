@@ -1,12 +1,12 @@
 from flask import jsonify
-from . import app
+from app import my_server
 from app.ahp import prioritize_bridges
 from app.ahp import convert_to_serializable
-
 import json
 from app.scraper import get_latest_articles  
 
-@app.route("/api/data")
+
+@my_server.route("/api/data")
 def get_data():
     data = {
         "title": "Rebuild Ukraine with Us",
@@ -15,21 +15,21 @@ def get_data():
     }
     return jsonify(data)
 
-@app.route("/api/news")
+@my_server.route("/api/news")
 def get_news():
     news = get_latest_articles()
     return jsonify(news)
 
 
 
-@app.route("/api/bridges")
+@my_server.route("/api/bridges")
 def get_all_bridges():
     with open("app/data/bridges.json", "r") as file:
         data = json.load(file)
     return jsonify(data)
 
 
-@app.route("/api/regions/<region_id>")
+@my_server.route("/api/regions/<region_id>")
 def get_region_data(region_id):
     try:
         with open("app/data/bridges.json", "r") as f:
