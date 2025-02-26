@@ -1,5 +1,5 @@
 from app import app
-from app import routes  
+import app.routes  
 
 
 if __name__ == "__main__":
