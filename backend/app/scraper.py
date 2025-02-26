@@ -1,6 +1,5 @@
 import os
 import json
-import spacy
 import random
 import requests
 from dotenv import load_dotenv
@@ -12,8 +11,6 @@ from sklearn.decomposition import LatentDirichletAllocation
 
 # Load API key
 load_dotenv()
-nlp = spacy.load("en_core_web_sm")
-
 NEWS_API_KEY = os.getenv('NEWS_API_KEY')
 ukraine_keywords = ["Ukraine", "Kyiv", "Zelensky", "Russia-Ukraine war", "Ukrainian conflict"]
 
