@@ -1,5 +1,5 @@
 from flask import jsonify
-from app import app
+from . import app
 from app.ahp import prioritize_bridges
 from app.ahp import convert_to_serializable
 
