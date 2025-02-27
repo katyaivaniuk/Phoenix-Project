@@ -29,7 +29,7 @@ function RegionPage() {
     const ahpSteps = [
         {
             title: "Why AHP Algorithm",
-            content: "The Analytic Hierarchy Process (AHP) is our chosen method for bridge prioritization because:",
+            content: "The Analytic Hierarchy Process (AHP) is a decision-making framework that helps prioritize complex choices by breaking them down into a structured hierarchy of criteria and alternatives. It uses pairwise comparisons and mathematical calculations to assign relative weights, ensuring a logical and data-driven ranking of options. The Analytic Hierarchy Process (AHP) is our chosen method for bridge prioritization because:",
             keyPoints: [
                 {
                     title: "Complex Decision Making",
@@ -66,7 +66,7 @@ function RegionPage() {
         },
         {
             title: "Understanding AHP Matrix",
-            content: "The Analytic Hierarchy Process starts with a pairwise comparison matrix:",
+            content: "The Analytic Hierarchy Process starts with a pairwise comparison matrix.",
             matrix: [
                 [1, 7, 3],
                 [1/7, 1, 1/3],
@@ -100,7 +100,7 @@ function RegionPage() {
     useEffect(() => {
         const fetchRegionData = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:5000/api/regions/${regionId.toLowerCase()}`);
+                const response = await fetch(`http://127.0.0.1:8779/api/regions/${regionId.toLowerCase()}`);
                 const data = await response.json();
               //  setRegion(regionId); // Set the region name
                 setBridges(data);    // Set the bridges data
@@ -126,7 +126,7 @@ function RegionPage() {
             case 0:
                 return (
                     <div className="why-ahp-section">
-                        <p className="step-intro">{step.content}</p>
+                        <p className="step-intro" style={{ lineHeight: "25px" }}>{step.content}</p>
                         
                         <div className="key-points-grid">
                             {step.keyPoints?.map((point, index) => (
@@ -168,7 +168,7 @@ function RegionPage() {
             case 1:
                 return (
                     <div className="matrix-section">
-                        <p className="matrix-intro">{step.content}</p>
+                        <p style={{ fontSize: "18px" }}>{step.content}</p>
                         <div className="matrix-container">
                             <table className="comparison-matrix">
                                 <thead>
@@ -203,6 +203,8 @@ function RegionPage() {
                                 </tbody>
                             </table>
                         </div>
+                        <p className="matrix-intro">{" In AHP, decision-makers assign numerical values to compare the importance of each criterion against another, forming a pairwise comparison matrix like the one shown below. These values are then used to calculate priority scores, which help determine the best overall choice. For example, in the matrix below, Average Car Traffic Volume per Day is considered 7 times more important than Reconstruction Costs when prioritizing bridge repairs. The final rankings help ensure that reconstruction decisions are data-driven and aligned with key priorities."}</p>
+
                     </div>
                 );
 
@@ -237,7 +239,7 @@ function RegionPage() {
                                 {step.formula}
                             </div>
                             <div className="formula-explanation">
-                                <p> Each bridge receives a final score based on these weights. This formula combines all three factors with their respective weights to calculate a final priority score for each bridge.Higher scores indicate higher priority for reconstruction.</p>
+                                <p style={{ lineHeight: "25px" }}> Each bridge receives a final score based on these weights. This formula combines all three factors with their respective weights to calculate a final priority score for each bridge.Higher scores indicate higher priority for reconstruction.</p>
                             </div>
                         </div>
                     </div>

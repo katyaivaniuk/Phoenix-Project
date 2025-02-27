@@ -49,7 +49,7 @@ const MapComponent = () => {
 
     // Fetch bridge data from API
     useEffect(() => {
-        fetch("http://127.0.0.1:5000/api/bridges") // Replace with your backend API
+        fetch("http://127.0.0.1:8779/api/bridges") // Replace with your backend API
             .then((response) => response.json())
             .then((data) => {
                 console.log("Fetched Bridges:", data); // Debugging to ensure data is correct
