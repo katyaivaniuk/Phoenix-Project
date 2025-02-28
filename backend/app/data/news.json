@@ -1,0 +1,33 @@
+[
+    {
+        "image": "https://static.foxnews.com/foxnews.com/content/uploads/2025/02/trump-macron-zelenskyy.png",
+        "link": "https://www.foxnews.com/opinion/trumps-art-deal-turns-around-unwinnable-war-against-ukraine",
+        "publishedAt": "2025-02-26T17:15:46Z",
+        "sentiment": 0,
+        "summary": "Trump is known for the Art of the Deal and he showed that with his Ukraine war peace negotiations. He is taking an unwinnable conflict and helping everyone win the peace.",
+        "title": "Trump’s Art of the Deal turns around an unwinnable war against Ukraine",
+        "topic": 2,
+        "weight": 0.3333333333333333
+    },
+    {
+        "image": "https://nypost.com/wp-content/uploads/sites/2/2025/02/99296156.jpg?quality=75&strip=all&w=1024",
+        "link": "https://nypost.com/2025/02/26/us-news/trump-says-us-will-try-to-get-ukraine-as-much-land-back-as-possible-but-zelensky-can-forget-about-nato/",
+        "publishedAt": "2025-02-26T20:12:20Z",
+        "sentiment": 0,
+        "summary": "President Trump said Wednesday Russia will have to make “concessions” in negotiations with Ukraine — but that Ukrainian President Volodymyr Zelensky “can forget” about joining NATO. The president has hesitated to speak about what occupied land Ukraine could g…",
+        "title": "Trump says US will try to get Ukraine as much land back ‘as possible’ — but Zelensky can ‘forget about’ NATO",
+        "topic": 3,
+        "weight": 0.25
+    },
+    {
+        "image": "https://biztoc.com/cdn/906/og.png",
+        "link": "https://biztoc.com/x/f03a6591c40c7ebe",
+        "publishedAt": "2025-02-26T21:35:03Z",
+        "sentiment": 0,
+        "summary": "Donald Trump likes deals. Ukrainian President Volodmyr Zelensky seems poised to give him one that could be a lifeline for his embattled country as it fights a Russian invasion now in its fourth year.\nPresident Trump has been far more hostile toward Ukraine du…",
+        "title": "Commentary: Zelensky and Ukraine strike a crafty minerals deal with Trump",
+        "topic": 4,
+        "weight": 0.2
+    }
+    
+]

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-//const BASE_URL = 'http://127.0.0.1:8779'; // Use this for development
-const BASE_URL = 'https://king-prawn-app-icb9n.ondigitalocean.app';
+const BASE_URL = 'http://127.0.0.1:8779'; // Use this for development
+//const BASE_URL = 'https://king-prawn-app-icb9n.ondigitalocean.app';
 // Fetch general data
 export const fetchData = async () => {
   try {
@@ -16,7 +16,7 @@ export const fetchData = async () => {
 export const fetchNews = async () => {
   try {
     const response = await axios.get(`${BASE_URL}/api/news`);
-    console.log('Fetched news:', response.data);  // Log the fetched news data
+    console.log('Fetched news response:', response);  // Log the fetched news data
     return response.data;
   } catch (error) {
     console.error('Error fetching news:', error);
