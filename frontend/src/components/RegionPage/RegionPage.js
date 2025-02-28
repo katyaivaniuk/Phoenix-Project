@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './RegionPage.css';
+import { fetchBridgesForRegion } from '../../services/apiService';
 
 function RegionPage() {
     const { regionId } = useParams();
-    //const [region, setRegion] = useState(null);
     const [bridges, setBridges] = useState([]);
     const [error, setError] = useState(null);
     const [activeStep, setActiveStep] = useState(0);
@@ -98,19 +98,11 @@ function RegionPage() {
     
 
     useEffect(() => {
-        const fetchRegionData = async () => {
-            try {
-                const response = await fetch(`http://127.0.0.1:8779/api/regions/${regionId.toLowerCase()}`);
-                const data = await response.json();
-              //  setRegion(regionId); // Set the region name
-                setBridges(data);    // Set the bridges data
-            } catch (err) {
-                console.error("Error fetching region data:", err);
-                setError(err.message);
-            }
-        };
+        console.log("I'm in use effect");
+        fetchBridgesForRegion(regionId)
+            .then(data => setBridges(data))
+            .catch(err => setError(err.message))
 
-        fetchRegionData();
     }, [regionId]);
 
     const handleToggleInfo = (bridgeId) => {

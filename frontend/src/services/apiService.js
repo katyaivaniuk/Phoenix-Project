@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://127.0.0.1:8779'; // Use this for development
-// const BASE_URL = 'https://king-prawn-app-icb9n.ondigitalocean.app';
+//const BASE_URL = 'http://127.0.0.1:8779'; // Use this for development
+const BASE_URL = 'https://king-prawn-app-icb9n.ondigitalocean.app';
 // Fetch general data
 export const fetchData = async () => {
   try {
@@ -45,4 +45,27 @@ export const fetchFallbackNews = async () => {
     return [];  // Return an empty array if there is an error
   }
 };
+
+export const fetchBridges = async () => {
+  try {
+    const response = await axios.get(`${BASE_URL}/api/bridges`)
+    return response.data;
+
+  } catch (error) {
+    console.error("Faile to fetch bridges");
+    return [];
+  }
+};
+
+export const fetchBridgesForRegion = async (region) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/api/regions/${region.toLowerCase()}`)
+    return response.data;
+
+  } catch (error) {
+    console.error(`Failed to fetch bridges for region ${region}:  ${error}`);
+    return [];
+  }
+}
+
 

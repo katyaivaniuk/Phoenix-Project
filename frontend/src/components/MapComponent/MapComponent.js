@@ -6,6 +6,7 @@ import "leaflet/dist/leaflet.css";
 // Fix marker icon issue for Leaflet
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
+import { fetchBridges } from "../../services/apiService";
 
 const DefaultIcon = L.icon({
     iconUrl: markerIcon,
@@ -49,13 +50,9 @@ const MapComponent = () => {
 
     // Fetch bridge data from API
     useEffect(() => {
-        fetch("http://127.0.0.1:8779/api/bridges") // Replace with your backend API
-            .then((response) => response.json())
-            .then((data) => {
-                console.log("Fetched Bridges:", data); // Debugging to ensure data is correct
-                setBridges(data);
-            })
-            .catch((error) => console.error("Error fetching bridge data:", error));
+        fetchBridges()
+        .then(data => setBridges(data))
+        .catch((error) => console.error("Error fetching bridge data:", error));
     }, []);
 
     return (
