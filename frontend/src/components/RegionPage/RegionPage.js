@@ -23,6 +23,7 @@ function RegionPage() {
         'zaporizhzhia': '/images/static5.webp',
         'mykolaiv': '/images/static6.jpg',
         'dnipropetrovsk': '/images/static7.jpg',
+        'odesa': '/images/static8.jpg'
     };
 
 
@@ -263,28 +264,6 @@ function RegionPage() {
                     />
                 )}
             </section>
-            <section className="ahp-explanation-section">
-                <h2>Bridge Prioritization Algorithm</h2>
-                
-                <div className="ahp-interactive-container">
-                    <div className="ahp-navigation">
-                        {ahpSteps.map((step, index) => (
-                            <div 
-                                key={index}
-                                className={`step-indicator ${activeStep === index ? 'active' : ''}`}
-                                onClick={() => setActiveStep(index)}
-                            >
-                                <div className="step-number">{index + 1}</div>
-                                <div className="step-title">{step.title}</div>
-                            </div>
-                        ))}
-                    </div>
-
-                    <div className="ahp-content">
-                        {renderStepContent()}
-                    </div>
-                </div>
-            </section>
             <section className="region-bridge-section">
                 <h2>Reconstruction of Bridges Based on Priority</h2>
                 <p>This section allows you to learn about the reconstruction of the bridges in this region and shows which projects are in urgent need of rebuilding.</p>
@@ -322,6 +301,28 @@ function RegionPage() {
                         )}
                     </div>
                     ))}
+                </div>
+            </section>
+            <section className="ahp-explanation-section">
+                <h2>Bridge Prioritization Algorithm</h2>
+                
+                <div className="ahp-interactive-container">
+                    <div className="ahp-navigation">
+                        {ahpSteps.map((step, index) => (
+                            <div 
+                                key={index}
+                                className={`step-indicator ${activeStep === index ? 'active' : ''}`}
+                                onClick={() => setActiveStep(index)}
+                            >
+                                <div className="step-number">{index + 1}</div>
+                                <div className="step-title">{step.title}</div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="ahp-content">
+                        {renderStepContent()}
+                    </div>
                 </div>
             </section>
 

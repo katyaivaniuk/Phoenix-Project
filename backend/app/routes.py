@@ -23,7 +23,7 @@ def get_news():
     # news_json = jsonify(news)
     # return news_json
 
-    # Cached News
+    #Cached News
     with open("app/data/news.json", "r") as news_file:
         data = json.load(news_file)
         return data

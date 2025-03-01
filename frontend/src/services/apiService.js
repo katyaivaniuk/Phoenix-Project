@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-//const BASE_URL = 'http://127.0.0.1:8779'; // Use this for development
+// const BASE_URL = 'http://127.0.0.1:8779'; // Use this for development
 const BASE_URL = 'https://king-prawn-app-icb9n.ondigitalocean.app';
 // Fetch general data
 export const fetchData = async () => {
