@@ -26,20 +26,30 @@ function Layout() {
             <main className="content">
                 <Outlet />  
             </main>
-            <footer>
-                <div className="footer-container">
-                    <div className="footer-left">
-                        <p>Email: kateryna@uni.minerva.edu</p>
-                    </div>
-                    <div className="footer-center">
-                        <h1>Phoenix Ukraine</h1>
-                        <img src="/images/Logo.png" alt="Phoenix Ukraine Logo" className="footer-logo" />
-                    </div>
-                    <div className="footer-right">
-                        <p>Phone: 415-579-6088</p>
-                    </div>
-                </div>
-            </footer>
+<footer>
+    <div className="footer-container">
+        <div className="footer-left">
+            <h3>Contact</h3>
+            <p>Email: <a href="mailto:kateryna@uni.minerva.edu">kateryna@minerva.edu</a></p>
+            <p>Phone: <a href="tel:415-579-6088">415-579-6088</a></p>
+        </div>
+        
+        <div className="footer-center">
+            <img src="/images/Logo.png" alt="Phoenix Ukraine Logo" className="footer-logo" />
+            <h1>Phoenix Ukraine</h1>
+            <p>Rebuilding Infrastructure for a Brighter Future</p>
+        </div>
+        
+        <div className="footer-right">
+            <h3>Follow Us</h3>
+            <div className="social-icons">
+            <p><a href="https://facebook.com"><span>👤</span> Facebook</a></p>
+            <p><a href="https://linkedin.com"><span>🔗</span> LinkedIn</a></p>
+        </div>
+        </div>
+    </div>
+</footer>
+
         </div>
     );
 }

@@ -17,16 +17,24 @@ def get_data():
 
 @my_server.route("/api/news")
 def get_news():
-    # This API is expensive, so I store the news once a week or so
-    # Uncomment the code below to fetch news from the API
+# This API is expensive, so I store the news once a week or so
+# Uncomment the code below to fetch news from the API
     # news = get_latest_articles()
+    # print(news)
+
+    # try:
+    #     with open("app/data/news.json", "w", encoding="utf-8") as news_file:
+    #         json.dump(news, news_file, ensure_ascii=False, indent=4)
+    #     print("✅ News saved to news.json")
+    # except Exception as e:
+    #     print("❌ Error writing to news.json:", e)
     # news_json = jsonify(news)
     # return news_json
 
-    #Cached News
+#Cached News
     with open("app/data/news.json", "r") as news_file:
         data = json.load(news_file)
-        return data
+    return data
 
 
 

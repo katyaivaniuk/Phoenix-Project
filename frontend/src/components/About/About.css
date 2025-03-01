@@ -2,7 +2,8 @@
 .about-section {
     padding: 40px 10px;
     text-align: left;
-    background-color: #1a1a1a;
+    background: linear-gradient(to bottom, #010101, #141414, #171717);
+    background-attachment: fixed; 
     width: 1200px;
 
 }

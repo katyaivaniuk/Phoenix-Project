@@ -8,6 +8,8 @@ html, body {
     display: flex;
     flex-direction: column; 
     font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to bottom, #010101, #141414, #171717);
+    background-attachment: fixed; 
 
 }
 
@@ -157,4 +159,6 @@ body {
   .goal p {
     font-size: 14px;
     color: #ccc;
+    opacity: 0.9;
+    line-height: 1.5;
   }

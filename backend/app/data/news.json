@@ -1,33 +1,52 @@
 [
     {
-        "image": "https://static.foxnews.com/foxnews.com/content/uploads/2025/02/trump-macron-zelenskyy.png",
-        "link": "https://www.foxnews.com/opinion/trumps-art-deal-turns-around-unwinnable-war-against-ukraine",
-        "publishedAt": "2025-02-26T17:15:46Z",
-        "sentiment": 0,
-        "summary": "Trump is known for the Art of the Deal and he showed that with his Ukraine war peace negotiations. He is taking an unwinnable conflict and helping everyone win the peace.",
-        "title": "Trump’s Art of the Deal turns around an unwinnable war against Ukraine",
-        "topic": 2,
-        "weight": 0.3333333333333333
+        "title": "The Imperialist Philosopher Who Demanded the Ukraine War",
+        "link": "https://www.newyorker.com/news/the-weekend-essay/the-imperialist-philosopher-who-demanded-the-ukraine-war",
+        "summary": "For decades, Alexander Dugin argued that Russia had a messianic mission, and that destroying an independent Ukraine was necessary to fulfilling it.",
+        "publishedAt": "2025-03-01",
+        "image": "https://media.newyorker.com/photos/67c0c8fcae4c5a7779f76c23/4:3/w_1600,c_limit/Verini_Final_Bleed.jpg",
+        "weight": 1.0,
+        "sentiment": 0.0,
+        "topic": 0
     },
     {
-        "image": "https://nypost.com/wp-content/uploads/sites/2/2025/02/99296156.jpg?quality=75&strip=all&w=1024",
-        "link": "https://nypost.com/2025/02/26/us-news/trump-says-us-will-try-to-get-ukraine-as-much-land-back-as-possible-but-zelensky-can-forget-about-nato/",
-        "publishedAt": "2025-02-26T20:12:20Z",
-        "sentiment": 0,
-        "summary": "President Trump said Wednesday Russia will have to make “concessions” in negotiations with Ukraine — but that Ukrainian President Volodymyr Zelensky “can forget” about joining NATO. The president has hesitated to speak about what occupied land Ukraine could g…",
-        "title": "Trump says US will try to get Ukraine as much land back ‘as possible’ — but Zelensky can ‘forget about’ NATO",
-        "topic": 3,
-        "weight": 0.25
+        "title": "Ukraine Minerals Meeting Falls Apart After Zelensky Threatens U.S. Will 'Feel' Consequences of War",
+        "link": "https://www.breitbart.com/politics/2025/02/28/ukraine-minerals-meeting-falls-apart-after-zelensky-threatens-u-s-will-feel-consequences-of-war/",
+        "summary": "President Donald Trump, Vice President JD Vance, and Ukrainian President Volodymyr Zelensky engaged in a heated argument during an Oval Office press conference on Friday.\nThe post Ukraine Minerals Meeting Falls Apart After Zelensky Threatens U.S. Will ‘Feel’ …",
+        "publishedAt": "2025-02-28T18:51:35Z",
+        "image": "https://media.breitbart.com/media/2025/02/zelensky-trump-vance-white-house-meeting-AP-640x335.jpg",
+        "weight": 0.5,
+        "sentiment": 0.0,
+        "topic": 1
     },
     {
-        "image": "https://biztoc.com/cdn/906/og.png",
-        "link": "https://biztoc.com/x/f03a6591c40c7ebe",
-        "publishedAt": "2025-02-26T21:35:03Z",
-        "sentiment": 0,
-        "summary": "Donald Trump likes deals. Ukrainian President Volodmyr Zelensky seems poised to give him one that could be a lifeline for his embattled country as it fights a Russian invasion now in its fourth year.\nPresident Trump has been far more hostile toward Ukraine du…",
-        "title": "Commentary: Zelensky and Ukraine strike a crafty minerals deal with Trump",
-        "topic": 4,
-        "weight": 0.2
+        "title": "Fico’s coalition clashes over Slovakia’s pro-Ukraine UN vote",
+        "link": "https://www.cnbc.com/2025/02/28/trump-vance-and-zelenskyy-clash-at-white-house-ukraine-meeting.html",
+        "summary": "A row over Slovakia's UN vote on Russia's war in Ukraine has exposed another split within Prime Minister Fico's ruling coalition, with officials publicly disputing the country's stance.",
+        "publishedAt": "2025-02-28T19:13:25Z",
+        "image": "https://en.euractiv.eu/wp-content/uploads/sites/2/2025/02/11132844-e1740725330385.jpg",
+        "weight": 0.31666666666666665,
+        "sentiment": 0.05000000000000001,
+        "topic": 2
+    },
+    {
+        "title": "'He's All Dressed Up!': Trump Dings Zelensky For Not Wearing Suit To White House",
+        "link": "https://www.breitbart.com/europe/2025/02/28/hes-all-dressed-up-trump-dings-zelensky-for-not-wearing-suit-to-white-house/",
+        "summary": "First words by President Trump to Ukraine's Zelensky as he arrived at the White House was ribbing him for having come wearing athleisure. \nThe post ‘He’s All Dressed Up!’: Trump Dings Zelensky For Not Wearing Suit To White House appeared first on Breitbart.",
+        "publishedAt": "2025-02-28T17:02:05Z",
+        "image": "https://media.breitbart.com/media/2025/02/GettyImages-2202518822-e1740761843432-640x335.jpg",
+        "weight": 0.3,
+        "sentiment": 0.09999999999999999,
+        "topic": 2
+    },
+    {
+        "title": "Trump and Zelenskyy meeting turns into shouting as Ukraine president accused of being 'disrespectful'",
+        "link": "https://www.cbc.ca/news/world/us-ukraine-white-house-1.7471542",
+        "summary": "A meeting between U.S. President Donald Trump and Ukrainian President Volodymyr Zelenskyy devolved into shouting at the White House on Friday, a remarkable scene unlike any other seen in the Oval Office in recent memory.",
+        "publishedAt": "2025-02-28T17:58:50Z",
+        "image": "https://i.cbc.ca/1.7471647.1740767266!/fileImage/httpImage/image.JPG_gen/derivatives/16x9_1180/ukraine-crisis-usa.JPG?im=Resize%3D620",
+        "weight": 0.25,
+        "sentiment": 0.25,
+        "topic": 2
     }
-    
 ]

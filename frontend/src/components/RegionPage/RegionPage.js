@@ -14,7 +14,6 @@ function RegionPage() {
     const [selectedBridgeId, setSelectedBridgeId] = useState(null); // Track which card is toggled
 
 
-
     const staticImages = {
         'donetsk': '/images/static1.jpg',
         'luhansk': '/images/static2.webp',
@@ -25,7 +24,7 @@ function RegionPage() {
         'dnipropetrovsk': '/images/static7.jpg',
         'odesa': '/images/static8.jpg'
     };
-
+    
 
     const ahpSteps = [
         {
@@ -264,48 +263,59 @@ function RegionPage() {
                     />
                 )}
             </section>
+            <section className="region-introduction">
+                <h2>Understanding Reconstruction in {regionId.charAt(0).toUpperCase() + regionId.slice(1).toLowerCase()}</h2>
+                <p>Welcome to the reconstruction dashboard for the {regionId.charAt(0).toUpperCase()+ regionId.slice(1).toLowerCase()} region. This page provides an overview of bridge reconstruction efforts, prioritization, and the decision-making process behind it.</p>
+                <p>Scroll down to explore bridge projects, learn about the ranking system, and understand how priority is determined using our AHP algorithm.</p>
+            </section>
+    
+    
             <section className="region-bridge-section">
-                <h2>Reconstruction of Bridges Based on Priority</h2>
-                <p>This section allows you to learn about the reconstruction of the bridges in this region and shows which projects are in urgent need of rebuilding.</p>
+                <h2>Which Bridges Need Immediate Reconstruction?</h2>
+                <p>Here’s a breakdown of bridges in {regionId.charAt(0).toUpperCase()+ regionId.slice(1).toLowerCase()}, ranked by urgency. Click on a bridge to learn more about its history and reconstruction needs.</p>
                 <div className="bridge-cards">
                     {bridges.map((bridge) => (
                         <div key={bridge["Bridge ID"]} className="bridge-card">
                             <div className="card-content">
                                 {/* Info Icon */}
                                 <div className="info-icon" onClick={() => handleToggleInfo(bridge["Bridge ID"])}>ℹ️</div>
-
+    
                                 {/* Card front */}
-                            <img src={`/images/${bridge["Bridge ID"]}.jpg`} alt={bridge["Bridge Name"]} />
-                            <div className="tooltip-container">
-                                <div className={`rank-badge rank-${bridge["Rank"]}`}>
-                                    Priority {bridge["Rank"]}
+                                <img src={`/images/${bridge["Bridge ID"]}.jpg`} alt={bridge["Bridge Name"]} />
+                                <div className="tooltip-container">
+                                    <div className={`rank-badge rank-${bridge["Rank"]}`}>
+                                        Priority {bridge["Rank"]}
+                                    </div>
+                                    <span className="tooltip-text">
+                                        Rank {bridge["Rank"]}: Based on AHP score considering traffic volume, reconstruction costs, and function.
+                                    </span>
                                 </div>
-                                <span className="tooltip-text">
-                                    Rank {bridge["Rank"]}: Based on AHP score considering traffic volume, reconstruction costs, and function.
-                                </span>
+                                <h3>{bridge["Bridge Name"]}</h3> 
+                                <p style={{ fontSize: '14px', lineHeight: "10px"}}><strong>Function:</strong> {bridge["Bridge Function"]}</p>
+                                <p style={{ fontSize: '14px', lineHeight: "10px"}}><strong>Reconstruction Cost:</strong> €{bridge["Reconstruction Costs"].toLocaleString()}</p>
+                                <p style={{ fontSize: '14px', lineHeight: "10px"}}><strong>Total Area of Damage:</strong> {bridge["Total Area of the Damage"]} m²</p>
+                                <p style={{ fontSize: '14px', lineHeight: "10px"}}><strong>Average Traffic Volume:</strong> {bridge["Volume"]} cars/day</p>
+                                <p style={{ fontSize: '14px', lineHeight: "10px"}}><strong>AHP Score:</strong> {bridge["AHP Score"].toFixed(4)}</p> 
                             </div>
-                            <h3>{bridge["Bridge Name"]}</h3> 
-                            <p><strong>Function:</strong> {bridge["Bridge Function"]}</p>
-                            <p><strong>Reconstruction Cost:</strong> €{bridge["Reconstruction Costs"].toLocaleString()}</p>
-                            <p><strong>Total Area of Damage:</strong> {bridge["Total Area of the Damage"]} m²</p>
-                            <p><strong>Average Traffic Volume:</strong> {bridge["Volume"]} cars/day</p>
-
-                            <p><strong>AHP Score:</strong> {bridge["AHP Score"].toFixed(4)}</p> 
-                        </div>
+    
                             {/* Toggle Content */}
                             {selectedBridgeId === bridge["Bridge ID"] && (
-                            <div className="bridge-history">
-                                <h4>History of Deconstruction</h4>
-                                <p>{bridge["Deconstruction History"] || "No history available for this bridge."}</p>
-                            </div>
-                        )}
-                    </div>
+                                <div className="bridge-history">
+                                    <h4>History of Destruction</h4>
+                                    <p style={{ fontSize: '14px'}}>{bridge["Deconstruction History"] || "No history available for this bridge."}</p>
+                                </div>
+                            )}
+                        </div>
                     ))}
                 </div>
             </section>
+    
+            <section className="section-transition">
+                <p>Now that you've explored the bridges in need of reconstruction, you might wonder how these priorities are determined. Our ranking system is based on a structured approach called the Analytic Hierarchy Process (AHP), which we explain below.</p>
+            </section>
+    
             <section className="ahp-explanation-section">
-                <h2>Bridge Prioritization Algorithm</h2>
-                
+                <h2>How We Prioritize Bridges</h2>
                 <div className="ahp-interactive-container">
                     <div className="ahp-navigation">
                         {ahpSteps.map((step, index) => (
@@ -319,15 +329,16 @@ function RegionPage() {
                             </div>
                         ))}
                     </div>
-
                     <div className="ahp-content">
                         {renderStepContent()}
                     </div>
                 </div>
             </section>
-
+    
+    
         </div>
     );
+    
 }
 
 export default RegionPage;

@@ -91,7 +91,7 @@ def filter_and_diversify_articles(articles):
 
     # Sort by weight to prioritize the most unique and diverse articles
     filtered_articles.sort(key=lambda x: x['weight'], reverse=True)
-    return filtered_articles[:3]  # Return the top three unique articles
+    return filtered_articles[:5]  # Return the top three unique articles
 
 
 def calculate_weight(sentiment, topic):

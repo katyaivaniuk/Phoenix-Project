@@ -1,9 +1,9 @@
 
 /* Latest News Section */
 .news-section {
-    width: 900px;
+    width: 100%;
+    background: transparent; 
     padding: 40px 20px;
-    background-color: #000;  /* Matches the background color */
     color: white;
   }
   
@@ -25,7 +25,6 @@
     width: 100%;
     max-width: 900px;  /* Restrict the max width for each news item */
     margin: 30px;
-    background-color: black;
     border: 0.5px solid white;  /* Specify the border with width, style, and color */
     padding: 20px;
     border-radius: 10px;
