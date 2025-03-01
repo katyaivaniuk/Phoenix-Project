@@ -252,22 +252,23 @@ function RegionPage() {
     
     return (
         <div className="region-page">
-            <section className="region-header">
+        <section className="region-header">
+            <div className="region-text">
                 <h1>{regionId.charAt(0).toUpperCase() + regionId.slice(1).toLowerCase()} Reconstruction Projects</h1>
-                {staticImages[regionId.toLowerCase()] && (
-                    <img 
-                        src={staticImages[regionId.toLowerCase()]} 
-                        alt={`${regionId} Region`} 
-                        className="region-image"
-                        onError={(e) => console.error('Image failed to load:', e.target.src)} 
-                    />
-                )}
-            </section>
-            <section className="region-introduction">
-                <h2>Understanding Reconstruction in {regionId.charAt(0).toUpperCase() + regionId.slice(1).toLowerCase()}</h2>
-                <p>Welcome to the reconstruction dashboard for the {regionId.charAt(0).toUpperCase()+ regionId.slice(1).toLowerCase()} region. This page provides an overview of bridge reconstruction efforts, prioritization, and the decision-making process behind it.</p>
-                <p>Scroll down to explore bridge projects, learn about the ranking system, and understand how priority is determined using our AHP algorithm.</p>
-            </section>
+                <p>This page provides an overview of bridge reconstruction projects in {regionId.charAt(0).toUpperCase() + regionId.slice(1).toLowerCase()} region and explains how priorities are determined using the AHP algorithm. </p>
+                <p style={{ fontSize: '12px', fontStyle: "italic"}}>Scroll down to explore the projects and ranking system.</p>
+            </div>
+
+            {staticImages[regionId.toLowerCase()] && (
+                <img 
+                    src={staticImages[regionId.toLowerCase()]} 
+                    alt={`${regionId} Region`} 
+                    className="region-image"
+                    onError={(e) => console.error('Image failed to load:', e.target.src)} 
+                />
+            )}
+        </section>
+
     
     
             <section className="region-bridge-section">
@@ -278,7 +279,7 @@ function RegionPage() {
                         <div key={bridge["Bridge ID"]} className="bridge-card">
                             <div className="card-content">
                                 {/* Info Icon */}
-                                <div className="info-icon" onClick={() => handleToggleInfo(bridge["Bridge ID"])}>ℹ️</div>
+                                <div className="info-icon" onClick={() => handleToggleInfo(bridge["Bridge ID"])}>⚪️</div>
     
                                 {/* Card front */}
                                 <img src={`/images/${bridge["Bridge ID"]}.jpg`} alt={bridge["Bridge Name"]} />
@@ -311,7 +312,7 @@ function RegionPage() {
             </section>
     
             <section className="section-transition">
-                <p>Now that you've explored the bridges in need of reconstruction, you might wonder how these priorities are determined. Our ranking system is based on a structured approach called the Analytic Hierarchy Process (AHP), which we explain below.</p>
+                <p style={{ fontSize: '16px'}}> ℹ️ Now that you've explored the bridges in need of reconstruction, you might wonder how these priorities are determined. Our ranking system is based on a structured approach called the Analytic Hierarchy Process (AHP), which we explain below.</p>
             </section>
     
             <section className="ahp-explanation-section">

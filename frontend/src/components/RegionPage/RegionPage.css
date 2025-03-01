@@ -1,8 +1,7 @@
-
 .region-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; 
     color: white;
     padding: 40px 60px;
     margin-bottom: 50px;
@@ -10,14 +9,28 @@
     margin: 0 auto;
 }
 
-.region-header h1 {
-    font-size: 45px;
-    font-weight: bold;
-    margin: 0;
-    text-transform: capitalize;
-    max-width: 400px;
+.region-text {
+    flex: 1;
+    max-width: 450px; 
+    text-align: left;
 }
 
+.region-text h1 {
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 20px; 
+    text-transform: capitalize;
+    max-width: 100%;
+}
+
+.region-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #ddd;
+}
+
+/* Ensures the image stays on the right */
 .region-image {
     width: 700px;
     height: 500px;
@@ -44,40 +57,6 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
 }
 
-/* --- Region Introduction Section --- */
-.region-introduction {
-    margin: 50px auto;
-    padding: 50px 40px;
-    text-align: center;
-    color: white;
-    width: 1300px;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.region-introduction h2 {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #3a6fd5;
-}
-
-.region-introduction p {
-    font-size: 18px;
-    line-height: 1.8;
-    max-width: 900px;
-    margin: 0 auto 20px;
-    color: #e0e0e0;
-    opacity: 0.8;
-
-}
-
-.region-introduction p:last-child {
-    font-style: italic;
-    font-size: 16px;
-    opacity: 0.8;
-}
-
 .region-bridge-section {
     padding: 60px 40px;
     opacity: 0.9;
@@ -88,7 +67,6 @@
     max-width: 1300px;
     margin: 50px auto;
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .region-bridge-section h2 {
@@ -103,6 +81,7 @@
     justify-content: center;
     gap: 50px;
     flex-wrap: wrap;
+
 }
 
 .bridge-card {
@@ -113,6 +92,8 @@
     color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
     transition: transform 0.2s, box-shadow 0.2s; 
+    background-color: rgba(24, 24, 24, 0.95);
+
 }
 
 
@@ -158,13 +139,12 @@
 }
 
 .bridge-history {
-    background-color: #444;
+    background-color: rgba(27, 27, 27, 0.95);
     padding: 10px;
     border-radius: 5px;
     margin-top: 25px;
     line-height: 1.8;
 }
-
 
 
 .bridge-card:hover {
@@ -287,7 +267,6 @@
 
 .ahp-explanation-section {
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     margin: 100px auto;
@@ -393,7 +372,7 @@
 
 .quiz-option {
     padding: 15px;
-    border: 0.5px solid #ddd;
+    border: 0.2px solid #ddd;
     color: white;
     border-radius: 6px;
     background: rgba(18, 18, 18, 0.95);
@@ -462,13 +441,9 @@
 }
 
 .comparison-matrix th {
-    background-color: rgba(58, 111, 213, 0.1);
     font-weight: bold;
 }
 
-.comparison-matrix td {
-    background-color: rgba(58, 111, 213, 0.1);
-}
 
 .matrix-cell {
     cursor: help;
@@ -505,7 +480,6 @@
     max-width: 800px;
     margin: 0 auto;
     text-align: left;
-    background: rgba(18, 18, 18, 0.95);
     border-radius: 8px;
 }
 
@@ -645,16 +619,17 @@
     text-align: center;
     padding: 50px 20px;
     color: #ddd;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 50px auto;
     border-radius: 10px;
+    font-size: 14px;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
 .section-transition p {
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.8;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     
 }
