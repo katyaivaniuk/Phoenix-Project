@@ -1,4 +1,4 @@
-# Phoenix Ukraine - https://phoenix-ukraine.vercel.app/
+# Phoenix Ukraine 
 
 ## Overview
 Since Russian invasion of Ukraine in 2014, and a full-scale war started in 2022, Ukrainian cities experienced tremendous destruction and displacement, leading to significant challenges in infrastructure, housing, and essential services. The ongoing conflict has resulted in the devastation of key facilities, including schools, hospitals, and transportation networks, which are critical for the daily lives of citizens. In this context, the Phoenix Ukraine project is an initiative focused on developing a website to support and manage the reconstruction of transportation networks during and in the aftermath of the war. Due to the scope and the timeline of the project, I will be focusing on developing a website to support the reconstruction of the bridges in various regions of Ukraine. 
