@@ -57,10 +57,11 @@ const MapComponent = () => {
 
     return (
         <MapContainer center={[48.5, 37.5]} zoom={7} style={{ height: "500px", width: "100%" }}>
+
             <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-            />
+                url={`https://api.maptiler.com/maps/basic-v2/256/{z}/{x}/{y}.png?key=Jg6Qk7YcQO3RQherUXPk`}
+                attribution='&copy; <a href="https://www.maptiler.com/copyright/">MapTiler</a>'
+            /> 
             {/* Pass bridge data to MapMarkers */}
             <MapMarkers bridges={bridges} />
         </MapContainer>

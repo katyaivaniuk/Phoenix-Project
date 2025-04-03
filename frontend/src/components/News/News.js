@@ -9,11 +9,16 @@ function News({ news }) {
         {news.length > 0 ? (
           news.map((article, index) => (
             <div key={index} className="news-item">
-              <img 
-                src={article.image || '/images/News.jpeg'}  
-                alt={`News ${index + 1}`} 
-                className="news-image" 
-              />
+            <img
+              src={article.image}
+              alt={`News ${index + 1}`}
+              className="news-image"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = '/images/News.jpeg';
+              }}
+            />
+
               <div className="news-content">
                 <h4>{article.title}</h4>
                 <p>{article.summary}</p>
