@@ -6,8 +6,8 @@ import MapComponent from "../MapComponent/MapComponent";
 function Projects() {
     const regions = [
         { id: 'kharkiv', name: 'Kharkiv', image: '/images/kharkiv.jpg' },
-        { id: 'kherson', name: 'Kherson', image: '/images/kherson.jpg' },
-        { id: 'donetsk', name: 'Donetsk', image: '/images/donetsk.jpg' },
+        { id: 'kherson', name: 'Kherson', image: '/images/kherson.jpeg' },
+        { id: 'donetsk', name: 'Donetsk', image: '/images/donetsk.jpeg' },
         { id: 'kyiv', name: 'Kyiv', image: '/images/kyiv.jpg' },
         { id: 'mykolaiv', name: 'Mykolaiv', image: '/images/mykolaiv.webp' },
         { id: 'luhansk', name: 'Luhansk', image: '/images/luhansk.jpg' },

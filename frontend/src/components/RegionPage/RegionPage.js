@@ -21,7 +21,7 @@ function RegionPage() {
         'kherson': '/images/static4.webp',
         'zaporizhzhia': '/images/static5.webp',
         'mykolaiv': '/images/static6.jpg',
-        'dnipropetrovsk': '/images/static7.jpg',
+        'kyiv': '/images/static7.jpeg',
         'odesa': '/images/static8.jpg'
     };
     
@@ -279,7 +279,7 @@ function RegionPage() {
                         <div key={bridge["Bridge ID"]} className="bridge-card">
                             <div className="card-content">
                                 {/* Info Icon */}
-                                <div className="info-icon" onClick={() => handleToggleInfo(bridge["Bridge ID"])}>⚪️</div>
+                                <div className="info-icon" onClick={() => handleToggleInfo(bridge["Bridge ID"])}>ℹ️</div>
     
                                 {/* Card front */}
                                 <img src={`/images/${bridge["Bridge ID"]}.jpg`} alt={bridge["Bridge Name"]} />

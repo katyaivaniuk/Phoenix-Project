@@ -96,23 +96,25 @@ body {
   }
   
   .cta-button {
-    padding: 10px 20px; 
-    background-color: #04287a; 
-    color: white; 
-    cursor: pointer;
-    margin: 10px auto 0; 
-    border-radius: 30px; 
+    padding: 12px 30px;
+    background-color: #04287a;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
     font-size: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.5); 
+    border-radius: 30px;
+    border: none;
     text-align: center;
-    width: fit-content; 
-    height: 40px;
-    transition: background-color 0.3s, border 0.3s; 
-}
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(4, 40, 122, 0.4);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  }
   
   .cta-button:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(4, 40, 122, 0.6);
   }
+  
   
   /* Goals section */
   .goals-section {
@@ -162,3 +164,104 @@ body {
     opacity: 0.9;
     line-height: 1.5;
   }
+  .impact-section {
+    width: 1300px;
+    padding: 60px 30px;
+    margin-top: 40px;
+    border-radius: 12px;
+    text-align: center;
+  }
+  
+  .impact-heading {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+  
+  .impact-description {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 50px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .horizontal-counters {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .impact-card {
+    background-color: #121212;
+    padding: 20px 30px;
+    border-left: 5px solid #d92b2b;
+    border-radius: 12px;
+    width: 230px;
+    box-shadow: 0 0 10px rgba(255, 78, 78, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .impact-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .impact-card h3 {
+    font-size: 2rem;
+    color: #d92b2b;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(201, 39, 39, 0.6);
+  }
+  
+  .impact-card p {
+    font-size: 0.95rem;
+    color: #ccc;
+    margin: 0;
+  }
+  
+  .bridge-focus-text {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 30px;
+    text-align: center;
+  }
+  
+  .bridge-focus-text h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 15px;
+  }
+  
+  .bridge-focus-text p {
+    font-size: 1.05rem;
+    color: #ccc;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  .cta-button-red {
+    padding: 12px 30px;
+    background-color: #d92b2b;
+    color: white;
+    cursor: pointer;
+    margin: 20px auto 0;
+    border-radius: 30px;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    width: fit-content;
+    height: 45px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(204, 27, 27, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  
+  .cta-button-red:hover {
+    background-color: #ff1e1e;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 78, 78, 0.6);
+  }
+  

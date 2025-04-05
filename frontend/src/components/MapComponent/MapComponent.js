@@ -56,12 +56,21 @@ const MapComponent = () => {
     }, []);
 
     return (
-        <MapContainer center={[48.5, 37.5]} zoom={7} style={{ height: "500px", width: "100%" }}>
+            <MapContainer
+            center={[48.5, 31]} 
+            zoom={6}
+            minZoom={6}
+            maxZoom={12}
+            maxBounds={[[44, 21], [53.5, 41]]} 
+            maxBoundsViscosity={1.0} 
+            style={{ height: "500px", width: "100%" }}
+            >
 
             <TileLayer
-                url={`https://api.maptiler.com/maps/basic-v2/256/{z}/{x}/{y}.png?key=Jg6Qk7YcQO3RQherUXPk`}
-                attribution='&copy; <a href="https://www.maptiler.com/copyright/">MapTiler</a>'
-            /> 
+            url="https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=Jg6Qk7YcQO3RQherUXPk"
+            attribution='&copy; <a href="https://www.maptiler.com/">MapTiler</a> contributors'
+            />
+
             {/* Pass bridge data to MapMarkers */}
             <MapMarkers bridges={bridges} />
         </MapContainer>
