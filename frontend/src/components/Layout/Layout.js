@@ -35,8 +35,12 @@ function Layout() {
         </div>
         
         <div className="footer-center">
+        <Link to="/">
             <img src="/images/Logo.png" alt="Phoenix Ukraine Logo" className="footer-logo" />
+        </Link> 
+        <Link to="/"  style={{ textDecoration: 'none' }}>
             <h1>Phoenix Ukraine</h1>
+        </Link> 
             <p>Rebuilding Infrastructure for a Brighter Future</p>
         </div>
         

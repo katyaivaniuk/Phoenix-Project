@@ -79,9 +79,9 @@ def filter_and_diversify_articles(articles):
             'summary': str(description or "No description available."),
             'publishedAt': str(article['publishedAt']),
             'image': str(article.get('urlToImage', '/images/default-news.jpeg')),
-            'weight': float(weight),          # Convert weight to float
-            'sentiment': float(sentiment),    # Convert sentiment to float
-            'topic': int(topic)               # Convert topic to int
+            'weight': float(weight),         
+            'sentiment': float(sentiment),  
+            'topic': int(topic)              
         }
         
         # Add to sets to avoid duplicates in future iterations

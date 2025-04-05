@@ -25,9 +25,6 @@ function About() {
                             <img src="/images/github.png" alt="Github" />
                         </a>
                     </div>
-                    <a href="https://amenable-ziconium-199.notion.site/Kateryna-Ivaniuk-edf0ea267ec04da392d694baf81e2eb3?pvs=4" target="_blank" rel="noopener noreferrer">
-                        <button className="about-button">About Me</button>
-                    </a>
                 </div>
                 <div className="about-photo">
                     <img src="/images/myphoto.jpg" alt="Me" />
